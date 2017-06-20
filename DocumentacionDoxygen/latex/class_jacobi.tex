@@ -1,0 +1,162 @@
+\hypertarget{class_jacobi}{}\section{Jacobi Class Reference}
+\label{class_jacobi}\index{Jacobi@{Jacobi}}
+
+
+Se implementa el método numerico \hyperlink{class_jacobi}{Jacobi} para la solución de sistemas de ecuaciones lineales. En este caso sirve para la matriz de tipo \hyperlink{class_c_s_r}{C\+SR}.  
+
+
+
+
+{\ttfamily \#include $<$Jacobi.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_jacobi_a95143e2bfc3d028dd72baff2e0828e40}{}\label{class_jacobi_a95143e2bfc3d028dd72baff2e0828e40} 
+\hyperlink{class_jacobi_a95143e2bfc3d028dd72baff2e0828e40}{Jacobi} ()
+\begin{DoxyCompactList}\small\item\em Constructor Vacio. \end{DoxyCompactList}\item 
+\hypertarget{class_jacobi_aa8dec14e59b82b038b8567b333c04b3c}{}\label{class_jacobi_aa8dec14e59b82b038b8567b333c04b3c} 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{class_jacobi_aa8dec14e59b82b038b8567b333c04b3c}{solve} (T \&A, \hyperlink{class_vector}{Vector} \&x, \hyperlink{class_vector}{Vector} \&b)
+\begin{DoxyCompactList}\small\item\em Implementa el algoritmo de \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\item 
+int \hyperlink{class_jacobi_a4370d4024aee5a3224a76e87977e1cf3}{its} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de iteraciones realizadas. \end{DoxyCompactList}\item 
+double \hyperlink{class_jacobi_aaebdc79b8c4b4637e757cbea50ffda4b}{error} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el error calculado de la matriz. \end{DoxyCompactList}\item 
+double \hyperlink{class_jacobi_a949ec5de87b55889cb3e69400e1e50b7}{tim} ()
+\begin{DoxyCompactList}\small\item\em Tiempo utilizado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\item 
+void \hyperlink{class_jacobi_a4a493cb90b3ff37d68cea02bef85929a}{max\+Its} (int it)
+\begin{DoxyCompactList}\small\item\em Define un nuevo numero de iteraciones maximas permitidas. \end{DoxyCompactList}\item 
+void \hyperlink{class_jacobi_a43d8a58638f07dc6c427251efe5d6af8}{tole} (double t)
+\begin{DoxyCompactList}\small\item\em Define una nueva tolerancia para el método de \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\item 
+void \hyperlink{class_jacobi_abe57a404f09716e07721c74c715a3b42}{report} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla un reporte del algoritmo \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Se implementa el método numerico \hyperlink{class_jacobi}{Jacobi} para la solución de sistemas de ecuaciones lineales. En este caso sirve para la matriz de tipo \hyperlink{class_c_s_r}{C\+SR}. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6/12/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Mario Arturo Nieto Butrón  S\+Y\+SG 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_jacobi_aaebdc79b8c4b4637e757cbea50ffda4b}{}\label{class_jacobi_aaebdc79b8c4b4637e757cbea50ffda4b} 
+\index{Jacobi@{Jacobi}!error@{error}}
+\index{error@{error}!Jacobi@{Jacobi}}
+\subsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily double Jacobi\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el error calculado de la matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+errP Error alcanzado con el método \hyperlink{class_jacobi}{Jacobi}. 
+\end{DoxyReturn}
+\hypertarget{class_jacobi_a4370d4024aee5a3224a76e87977e1cf3}{}\label{class_jacobi_a4370d4024aee5a3224a76e87977e1cf3} 
+\index{Jacobi@{Jacobi}!its@{its}}
+\index{its@{its}!Jacobi@{Jacobi}}
+\subsubsection{\texorpdfstring{its()}{its()}}
+{\footnotesize\ttfamily int Jacobi\+::its (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el numero de iteraciones realizadas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+iterP Numero de iteraciones utilizadas para la convergencia del metodo. 
+\end{DoxyReturn}
+\hypertarget{class_jacobi_a4a493cb90b3ff37d68cea02bef85929a}{}\label{class_jacobi_a4a493cb90b3ff37d68cea02bef85929a} 
+\index{Jacobi@{Jacobi}!max\+Its@{max\+Its}}
+\index{max\+Its@{max\+Its}!Jacobi@{Jacobi}}
+\subsubsection{\texorpdfstring{max\+Its()}{maxIts()}}
+{\footnotesize\ttfamily void Jacobi\+::max\+Its (\begin{DoxyParamCaption}\item[{int}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define un nuevo numero de iteraciones maximas permitidas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Iteraciones nuevas permitidas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_jacobi_abe57a404f09716e07721c74c715a3b42}{}\label{class_jacobi_abe57a404f09716e07721c74c715a3b42} 
+\index{Jacobi@{Jacobi}!report@{report}}
+\index{report@{report}!Jacobi@{Jacobi}}
+\subsubsection{\texorpdfstring{report()}{report()}}
+{\footnotesize\ttfamily void Jacobi\+::report (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra en pantalla un reporte del algoritmo \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_jacobi_a949ec5de87b55889cb3e69400e1e50b7}{}\label{class_jacobi_a949ec5de87b55889cb3e69400e1e50b7} 
+\index{Jacobi@{Jacobi}!tim@{tim}}
+\index{tim@{tim}!Jacobi@{Jacobi}}
+\subsubsection{\texorpdfstring{tim()}{tim()}}
+{\footnotesize\ttfamily double Jacobi\+::tim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tiempo utilizado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+etimeP Tiempo usado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. 
+\end{DoxyReturn}
+\hypertarget{class_jacobi_a43d8a58638f07dc6c427251efe5d6af8}{}\label{class_jacobi_a43d8a58638f07dc6c427251efe5d6af8} 
+\index{Jacobi@{Jacobi}!tole@{tole}}
+\index{tole@{tole}!Jacobi@{Jacobi}}
+\subsubsection{\texorpdfstring{tole()}{tole()}}
+{\footnotesize\ttfamily void Jacobi\+::tole (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define una nueva tolerancia para el método de \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Valor double con la nueva tolerancia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/Jacobi.\+hpp\end{DoxyCompactItemize}

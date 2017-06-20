@@ -1,0 +1,354 @@
+\hypertarget{class_c_s_r}{}\section{C\+SR Class Reference}
+\label{class_c_s_r}\index{C\+SR@{C\+SR}}
+
+
+El \hyperlink{class_c_v_f_e_m}{C\+V\+F\+EM} devuelve matrices con un gran contenido de ceros en sus entradas que no son significativas en su calculo por lo tanto se requieren utilizar esquemas de almacenamiento, que consideren unicamiente la información necesaria, en éste caso se implementa el esquema \hyperlink{class_c_s_r}{C\+SR}. El esquema requiere \hyperlink{class_c_s_r}{C\+SR} de tres arreglos\+: data col irow en data se almacenan los elementos reales no cero de la matriz, en col se almacenan la coordenada j de la matriz y en irow se almacenan los indices de inicio y fin de cada renglón del arreglo.  
+
+
+
+
+{\ttfamily \#include $<$C\+S\+R.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_s_r_a5c5d4c602abb10f64bbabbdede9fdb11}{reserve\+Memory} ()
+\begin{DoxyCompactList}\small\item\em Método privado, solicita espacio en memoria para los contenedores. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_s_r_a113b4ec55800f1e6e447deff6cdc5352}{free\+Memory} ()
+\begin{DoxyCompactList}\small\item\em Método privado, libera el espacio de los contenedores. \end{DoxyCompactList}\item 
+\hypertarget{class_c_s_r_a146e641d1de73e4094af65c9ee995a12}{}\label{class_c_s_r_a146e641d1de73e4094af65c9ee995a12} 
+\hyperlink{class_c_s_r_a146e641d1de73e4094af65c9ee995a12}{C\+SR} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacio. \end{DoxyCompactList}\item 
+\hyperlink{class_c_s_r_a0baa0913a803243656231d2f699285ff}{C\+SR} (int m)
+\begin{DoxyCompactList}\small\item\em Constructor que inciaiza las variables dada una aproximación inicial. \end{DoxyCompactList}\item 
+\hypertarget{class_c_s_r_a90748f871ae00f2ef71ab6fc116ab890}{}\label{class_c_s_r_a90748f871ae00f2ef71ab6fc116ab890} 
+\hyperlink{class_c_s_r_a90748f871ae00f2ef71ab6fc116ab890}{C\+SR} (\hyperlink{class_c_s_r}{C\+SR} const \&Mtx)
+\begin{DoxyCompactList}\small\item\em Construtor copia de la matriz. \end{DoxyCompactList}\item 
+\hypertarget{class_c_s_r_a9541497983141b88c62ff26a18721391}{}\label{class_c_s_r_a9541497983141b88c62ff26a18721391} 
+\hyperlink{class_c_s_r_a9541497983141b88c62ff26a18721391}{$\sim$\+C\+SR} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_s_r_ad89020cc1d7d9fcda50e2b241e928c5b}{resize} (int m)
+\begin{DoxyCompactList}\small\item\em Redimensionamos el tamaño de una matriz \hyperlink{class_c_s_r}{C\+SR} en caso que se tuvieran elementos en ella estos seran eliminados. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_s_r_aeee0524514c9365bd324676e769cb869}{zeros} ()
+\begin{DoxyCompactList}\small\item\em Se llenan de ceros los conedores data, col y irow. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_s_r_aa8e97652354b0c384cc420ed5f50f353}{convert} (\hyperlink{class_c_o_o}{C\+OO} const \&coo)
+\begin{DoxyCompactList}\small\item\em Dada una matriz de tipo \hyperlink{class_c_o_o}{C\+OO} esta es convertida a una matriz de tipo \hyperlink{class_c_s_r}{C\+SR} y almacenada en memoria. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_s_r_a3aea9588569f106af8d753ac16ed3215}{binary\+Search} (int lmin, int lmax, int j)
+\begin{DoxyCompactList}\small\item\em Realiza una busqueda binaria sobre los contenedores de la matriz para localizar un elemento. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_s_r_afd302aaea45e8bb0acbd4fea15aa39be}{search} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de una componente de la matriz almacenada en este formato. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_s_r_aa32f7bdefbbc779fdc8752b4059cd277}{gN} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de la variable n. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_s_r_a0c25f2e1649edb38387ca56e39874cc9}{g\+Nnz} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el numero total de elementos no cero almacenados en la matriz. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_s_r_a5cce7eedb969cd75345adf06e448bd64}{g\+Data} (int i) const
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de data según las coordenadas i y j de la matriz. La complejidad de este álgoritmo es de O(log(n)), donde n es el numero maximo de elementos del renglon i-\/esimo. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_s_r_a5056fbfaf6281aa5c724800ee57b2fe7}{g\+Col} (int i) const
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de col. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_s_r_ae340935fa14b4c13e8a25ab490853ba7}{g\+Irow} (int i) const
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de irow. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_s_r_a8fafaf968b8989033f26038f1ea3b444}{operator=} (\hyperlink{class_c_s_r}{C\+SR} const \&Mtx)
+\begin{DoxyCompactList}\small\item\em Sobrecarda del operador =, para permitir almacenar una matriz en otra de manera sencilla. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_s_r_ab79698a53771a4a8ee5f5d9baf5b5f34}{}\label{class_c_s_r_ab79698a53771a4a8ee5f5d9baf5b5f34} 
+double $\ast$ {\bfseries data}
+\item 
+\hypertarget{class_c_s_r_a699cc5089afab7eca88ce6099c3b1241}{}\label{class_c_s_r_a699cc5089afab7eca88ce6099c3b1241} 
+int $\ast$ \hyperlink{class_c_s_r_a699cc5089afab7eca88ce6099c3b1241}{col}
+\begin{DoxyCompactList}\small\item\em Contenedor para almacenar los elementos no cero de una matriz. \end{DoxyCompactList}\item 
+\hypertarget{class_c_s_r_a86be7b1c810d67bc8dea34c97dbeaf21}{}\label{class_c_s_r_a86be7b1c810d67bc8dea34c97dbeaf21} 
+int $\ast$ \hyperlink{class_c_s_r_a86be7b1c810d67bc8dea34c97dbeaf21}{irow}
+\begin{DoxyCompactList}\small\item\em Contenedor para almacenar las coordenadas j de cada componente. \end{DoxyCompactList}\item 
+\hypertarget{class_c_s_r_aa2cba52780d8f58cf2bc89d282e23fb5}{}\label{class_c_s_r_aa2cba52780d8f58cf2bc89d282e23fb5} 
+int $\ast$ \hyperlink{class_c_s_r_aa2cba52780d8f58cf2bc89d282e23fb5}{idiag}
+\begin{DoxyCompactList}\small\item\em Contenedor para almacenar los indices de inicio y fin de cada renglon de la matriz. \end{DoxyCompactList}\item 
+\hypertarget{class_c_s_r_a05a5776187d775d8bf6757521e1b9f06}{}\label{class_c_s_r_a05a5776187d775d8bf6757521e1b9f06} 
+int \hyperlink{class_c_s_r_a05a5776187d775d8bf6757521e1b9f06}{nnz}
+\begin{DoxyCompactList}\small\item\em Contendor para almacenar la diagonal de una matriz. \end{DoxyCompactList}\item 
+\hypertarget{class_c_s_r_adec85ce4eb2b178193284da1ace46f8e}{}\label{class_c_s_r_adec85ce4eb2b178193284da1ace46f8e} 
+int \hyperlink{class_c_s_r_adec85ce4eb2b178193284da1ace46f8e}{nnz\+Max}
+\begin{DoxyCompactList}\small\item\em Número de componentes distintos de cero de una matriz. \end{DoxyCompactList}\item 
+\hypertarget{class_c_s_r_ae773c87e3f55fa8af05a982b62dc471a}{}\label{class_c_s_r_ae773c87e3f55fa8af05a982b62dc471a} 
+int \hyperlink{class_c_s_r_ae773c87e3f55fa8af05a982b62dc471a}{n}
+\begin{DoxyCompactList}\small\item\em Valor aproximado por 30. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+El \hyperlink{class_c_v_f_e_m}{C\+V\+F\+EM} devuelve matrices con un gran contenido de ceros en sus entradas que no son significativas en su calculo por lo tanto se requieren utilizar esquemas de almacenamiento, que consideren unicamiente la información necesaria, en éste caso se implementa el esquema \hyperlink{class_c_s_r}{C\+SR}. El esquema requiere \hyperlink{class_c_s_r}{C\+SR} de tres arreglos\+: data col irow en data se almacenan los elementos reales no cero de la matriz, en col se almacenan la coordenada j de la matriz y en irow se almacenan los indices de inicio y fin de cada renglón del arreglo. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6/12/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Mario Arturo Nieto Butrón  S\+Y\+SG 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_s_r_a0baa0913a803243656231d2f699285ff}{}\label{class_c_s_r_a0baa0913a803243656231d2f699285ff} 
+\index{C\+SR@{C\+SR}!C\+SR@{C\+SR}}
+\index{C\+SR@{C\+SR}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{C\+S\+R()}{CSR()}}
+{\footnotesize\ttfamily C\+S\+R\+::\+C\+SR (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que inciaiza las variables dada una aproximación inicial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Aproximación del número total de elementos de la matriz. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_s_r_a3aea9588569f106af8d753ac16ed3215}{}\label{class_c_s_r_a3aea9588569f106af8d753ac16ed3215} 
+\index{C\+SR@{C\+SR}!binary\+Search@{binary\+Search}}
+\index{binary\+Search@{binary\+Search}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{binary\+Search()}{binarySearch()}}
+{\footnotesize\ttfamily int C\+S\+R\+::binary\+Search (\begin{DoxyParamCaption}\item[{int}]{lmin,  }\item[{int}]{lmax,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Realiza una busqueda binaria sobre los contenedores de la matriz para localizar un elemento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lmin} & \\
+\hline
+{\em lmax} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+j 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_aa8e97652354b0c384cc420ed5f50f353}{}\label{class_c_s_r_aa8e97652354b0c384cc420ed5f50f353} 
+\index{C\+SR@{C\+SR}!convert@{convert}}
+\index{convert@{convert}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily void C\+S\+R\+::convert (\begin{DoxyParamCaption}\item[{\hyperlink{class_c_o_o}{C\+OO} const \&}]{coo }\end{DoxyParamCaption})}
+
+
+
+Dada una matriz de tipo \hyperlink{class_c_o_o}{C\+OO} esta es convertida a una matriz de tipo \hyperlink{class_c_s_r}{C\+SR} y almacenada en memoria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_c_o_o}{C\+OO}} & matriz de tipo \hyperlink{class_c_o_o}{C\+OO}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_a113b4ec55800f1e6e447deff6cdc5352}{}\label{class_c_s_r_a113b4ec55800f1e6e447deff6cdc5352} 
+\index{C\+SR@{C\+SR}!free\+Memory@{free\+Memory}}
+\index{free\+Memory@{free\+Memory}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{free\+Memory()}{freeMemory()}}
+{\footnotesize\ttfamily void C\+S\+R\+::free\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método privado, libera el espacio de los contenedores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_a5056fbfaf6281aa5c724800ee57b2fe7}{}\label{class_c_s_r_a5056fbfaf6281aa5c724800ee57b2fe7} 
+\index{C\+SR@{C\+SR}!g\+Col@{g\+Col}}
+\index{g\+Col@{g\+Col}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{g\+Col()}{gCol()}}
+{\footnotesize\ttfamily int C\+S\+R\+::g\+Col (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el valor de col. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Una localidad del arreglo col. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Contenido de la localidad i del arreglo col. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_a5cce7eedb969cd75345adf06e448bd64}{}\label{class_c_s_r_a5cce7eedb969cd75345adf06e448bd64} 
+\index{C\+SR@{C\+SR}!g\+Data@{g\+Data}}
+\index{g\+Data@{g\+Data}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{g\+Data()}{gData()}}
+{\footnotesize\ttfamily double C\+S\+R\+::g\+Data (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el valor de data según las coordenadas i y j de la matriz. La complejidad de este álgoritmo es de O(log(n)), donde n es el numero maximo de elementos del renglon i-\/esimo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Una localidad del arreglo data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Contenido de la localidad i del arreglo data. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_ae340935fa14b4c13e8a25ab490853ba7}{}\label{class_c_s_r_ae340935fa14b4c13e8a25ab490853ba7} 
+\index{C\+SR@{C\+SR}!g\+Irow@{g\+Irow}}
+\index{g\+Irow@{g\+Irow}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{g\+Irow()}{gIrow()}}
+{\footnotesize\ttfamily int C\+S\+R\+::g\+Irow (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el valor de irow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Una localidad del arreglo irow. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Contenido de la localidad i del arreglo irow. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_aa32f7bdefbbc779fdc8752b4059cd277}{}\label{class_c_s_r_aa32f7bdefbbc779fdc8752b4059cd277} 
+\index{C\+SR@{C\+SR}!gN@{gN}}
+\index{gN@{gN}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{g\+N()}{gN()}}
+{\footnotesize\ttfamily int C\+S\+R\+::gN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el valor de la variable n. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+n Regresa el contenido de la variable n. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_a0c25f2e1649edb38387ca56e39874cc9}{}\label{class_c_s_r_a0c25f2e1649edb38387ca56e39874cc9} 
+\index{C\+SR@{C\+SR}!g\+Nnz@{g\+Nnz}}
+\index{g\+Nnz@{g\+Nnz}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{g\+Nnz()}{gNnz()}}
+{\footnotesize\ttfamily int C\+S\+R\+::g\+Nnz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el numero total de elementos no cero almacenados en la matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nnz. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_a8fafaf968b8989033f26038f1ea3b444}{}\label{class_c_s_r_a8fafaf968b8989033f26038f1ea3b444} 
+\index{C\+SR@{C\+SR}!operator=@{operator=}}
+\index{operator=@{operator=}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void C\+S\+R\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{class_c_s_r}{C\+SR} const \&}]{Mtx }\end{DoxyParamCaption})}
+
+
+
+Sobrecarda del operador =, para permitir almacenar una matriz en otra de manera sencilla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_c_s_r}{C\+SR}} & matriz de tipo \hyperlink{class_c_s_r}{C\+SR}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_a5c5d4c602abb10f64bbabbdede9fdb11}{}\label{class_c_s_r_a5c5d4c602abb10f64bbabbdede9fdb11} 
+\index{C\+SR@{C\+SR}!reserve\+Memory@{reserve\+Memory}}
+\index{reserve\+Memory@{reserve\+Memory}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{reserve\+Memory()}{reserveMemory()}}
+{\footnotesize\ttfamily void C\+S\+R\+::reserve\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método privado, solicita espacio en memoria para los contenedores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_ad89020cc1d7d9fcda50e2b241e928c5b}{}\label{class_c_s_r_ad89020cc1d7d9fcda50e2b241e928c5b} 
+\index{C\+SR@{C\+SR}!resize@{resize}}
+\index{resize@{resize}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void C\+S\+R\+::resize (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+Redimensionamos el tamaño de una matriz \hyperlink{class_c_s_r}{C\+SR} en caso que se tuvieran elementos en ella estos seran eliminados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Aproximación del número total de elementos de la matriz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_afd302aaea45e8bb0acbd4fea15aa39be}{}\label{class_c_s_r_afd302aaea45e8bb0acbd4fea15aa39be} 
+\index{C\+SR@{C\+SR}!search@{search}}
+\index{search@{search}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily double C\+S\+R\+::search (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Devuelve el valor de una componente de la matriz almacenada en este formato. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Valor entero i del componente buscado. \\
+\hline
+{\em j} & Valor entero j del componente buscado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data Valor real almacenado en la matriz. 
+\end{DoxyReturn}
+\hypertarget{class_c_s_r_aeee0524514c9365bd324676e769cb869}{}\label{class_c_s_r_aeee0524514c9365bd324676e769cb869} 
+\index{C\+SR@{C\+SR}!zeros@{zeros}}
+\index{zeros@{zeros}!C\+SR@{C\+SR}}
+\subsubsection{\texorpdfstring{zeros()}{zeros()}}
+{\footnotesize\ttfamily void C\+S\+R\+::zeros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Se llenan de ceros los conedores data, col y irow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/C\+S\+R.\+hpp\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/C\+S\+R.\+cpp\end{DoxyCompactItemize}

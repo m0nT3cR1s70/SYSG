@@ -1,0 +1,36 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}\IeC {\'I}ndice de clases}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Lista de clases}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Documentaci\IeC {\'o}n de las clases}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Referencia de la plantilla de la Clase Add$<$ L, R $>$}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Referencia de la Clase B\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}AB}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Referencia de la Clase CG}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Referencia de la Clase C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}OO}{4}{section.2.4}
+\contentsline {section}{\numberline {2.5}Referencia de la Clase C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}SR}{5}{section.2.5}
+\contentsline {section}{\numberline {2.6}Referencia de la Clase C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}V\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}EM}{5}{section.2.6}
+\contentsline {section}{\numberline {2.7}Referencia de la Clase Gauss\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Seidel}{6}{section.2.7}
+\contentsline {section}{\numberline {2.8}Referencia de la plantilla de la Clase I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}OL$<$ P $>$}{6}{section.2.8}
+\contentsline {section}{\numberline {2.9}Referencia de la plantilla de la Clase I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}LU$<$ P $>$}{7}{section.2.9}
+\contentsline {section}{\numberline {2.10}Referencia de la Clase Jacobi}{7}{section.2.10}
+\contentsline {section}{\numberline {2.11}Referencia de la plantilla de la Clase JacobiP$<$ P $>$}{7}{section.2.11}
+\contentsline {section}{\numberline {2.12}Referencia de la Clase Mesh}{7}{section.2.12}
+\contentsline {subsection}{\numberline {2.12.1}Descripci\IeC {\'o}n detallada}{9}{subsection.2.12.1}
+\contentsline {subsection}{\numberline {2.12.2}Documentaci\IeC {\'o}n del constructor y destructor}{9}{subsection.2.12.2}
+\contentsline {subsubsection}{\numberline {2.12.2.1}Mesh()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{9}{subsubsection.2.12.2.1}
+\contentsline {subsubsection}{\numberline {2.12.2.2}Mesh()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{9}{subsubsection.2.12.2.2}
+\contentsline {subsection}{\numberline {2.12.3}Documentaci\IeC {\'o}n de las funciones miembro}{10}{subsection.2.12.3}
+\contentsline {subsubsection}{\numberline {2.12.3.1}area\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Element()}{10}{subsubsection.2.12.3.1}
+\contentsline {subsubsection}{\numberline {2.12.3.2}borde\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Node()}{10}{subsubsection.2.12.3.2}
+\contentsline {subsubsection}{\numberline {2.12.3.3}coord\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}X()}{10}{subsubsection.2.12.3.3}
+\contentsline {subsubsection}{\numberline {2.12.3.4}coord\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Y()}{11}{subsubsection.2.12.3.4}
+\contentsline {subsubsection}{\numberline {2.12.3.5}nborde\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Node()}{11}{subsubsection.2.12.3.5}
+\contentsline {subsubsection}{\numberline {2.12.3.6}n\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Element()}{11}{subsubsection.2.12.3.6}
+\contentsline {subsubsection}{\numberline {2.12.3.7}n\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Node()}{12}{subsubsection.2.12.3.7}
+\contentsline {section}{\numberline {2.13}Referencia de la plantilla de la Clase M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}LU$<$ P $>$}{12}{section.2.13}
+\contentsline {section}{\numberline {2.14}Referencia de la plantilla de la Clase Mult$<$ L $>$}{12}{section.2.14}
+\contentsline {section}{\numberline {2.15}Referencia de la plantilla de la Clase MV$<$ M, L $>$}{13}{section.2.15}
+\contentsline {section}{\numberline {2.16}Referencia de la Clase S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}OR}{13}{section.2.16}
+\contentsline {section}{\numberline {2.17}Referencia de la plantilla de la Clase Sub$<$ L, R $>$}{13}{section.2.17}
+\contentsline {section}{\numberline {2.18}Referencia de la Clase Timer}{13}{section.2.18}
+\contentsline {section}{\numberline {2.19}Referencia de la Clase Vector}{14}{section.2.19}
+\contentsline {chapter}{\IeC {\'I}ndice}{15}{section*.25}

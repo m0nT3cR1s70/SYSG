@@ -1,0 +1,746 @@
+\hypertarget{class_mesh}{}\section{Mesh Class Reference}
+\label{class_mesh}\index{Mesh@{Mesh}}
+
+
+Los objetos tipos mesh son contenedores para el dominio de interes generado con la herramienta gmsh.  
+
+
+
+
+{\ttfamily \#include $<$Mesh.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_mesh_a2af137f1571af89172b9c102302c416b}{}\label{class_mesh_a2af137f1571af89172b9c102302c416b} 
+\hyperlink{class_mesh_a2af137f1571af89172b9c102302c416b}{Mesh} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacio, inicializa los atributos a valores por defecto. \end{DoxyCompactList}\item 
+\hyperlink{class_mesh_a54a9cf0f6223e63253c8e9f8f99746b3}{Mesh} (std\+::string filename, std\+::vector$<$ double $>$ \&vertices)
+\begin{DoxyCompactList}\small\item\em Constructor para cargar un archivo $<$nombre$>$.msh y encargado de llamar a initialize(filename), para dar el tratamiento basico a una geometria obtenida con la herramienta gmsh. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_afa6559daf1f8495fd0a796fb31370542}{initialize} (std\+::string filename, std\+::vector$<$ double $>$ \&vertices)
+\item 
+void \hyperlink{class_mesh_a0885d845bc4001d43d7d92a0a98a127a}{read\+File\+G\+M\+SH} (std\+::string filename, std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&coord, std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&elemn)
+\begin{DoxyCompactList}\small\item\em Lee un archivo $\ast$.msh generado con la herramienta gmsh y almacena las coordenadas y los elementos triangulares que lo conforman. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a1a49aea1d3aa8ccf4f8acd367906b4ab}{reorder\+Node} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&coord)
+\begin{DoxyCompactList}\small\item\em Toma los nodos leidos del archivo y cambia el orden dado por G\+M\+SH, ordena primero con respecto a Y y despues con respecto a X de forma tal que se tendra todos los nodos con la misma componente en Y y despues se ordena las x en forma asecendente. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a88e3d635b654e3122774b3e49770648e}{relation\+Nodes} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&coord, std\+::vector$<$ int $>$ \&relation)
+\begin{DoxyCompactList}\small\item\em Toma los nodos ordenados y los desordenados y devuelve una relacion entre ellos, donde el indice de relation se refiere a la numeración de gmsh y el contenido indica a que lugar se movio en los nodos. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a7972a36435ea43732b4611a3765c28f6}{reorder\+Element} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&elemn, std\+::vector$<$ int $>$ \&relation)
+\begin{DoxyCompactList}\small\item\em Se reordenan los elementos segun la nueva numeracion de los nodos. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a8da1c7918301eaf9f6c71979247d2d94}{border\+Interior\+Node} (std\+::vector$<$ double $>$ \&vertices)
+\begin{DoxyCompactList}\small\item\em Para un dominio rectangular determina que nodos se encuentran sobre la frontera, cuales son interiores y los almacena. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_abe2ade2afc588a69ae7793eac37babfe}{bondary\+Condition} (int \hyperlink{class_mesh_aef283d305e17ab48771999e7835ed294}{type}, double \hyperlink{class_mesh_adef108df36f29f4880a9233075e04210}{value})
+\begin{DoxyCompactList}\small\item\em Para cada nodo de frontera se almacena en memoria el tipo de condición de frontera y su valor, solo acepta dos tipos distintos de condiciones de frontera Dirchelet y Neumman. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a1e306db2532f24a66b8d43cb634afd61}{type\+Node\+Border} ()
+\begin{DoxyCompactList}\small\item\em Distingue los nodos de frontera en nodos tipo Dirichlet y nodos tipo Neumann. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a71e8935f4fb4b98e12aefb137ab15131}{area\+Element} ()
+\begin{DoxyCompactList}\small\item\em Para cada elemento triangular almacenado calcula su área según las coordenadas de sus vertices usando un determinantes, ésta área es almacenada en memoria para su uso. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a721990c561955657b21953ea704e4e6d}{element\+Support\+Node} ()
+\begin{DoxyCompactList}\small\item\em Para cada nodo de la malla se calcula sus elementos soporte; es decir se almacena para cada nodo los elementos en donde aparace. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{class_mesh_a9f8707ebeb80eeca1d41ea67a56f7205}{node\+Neighborh} (int node)
+\begin{DoxyCompactList}\small\item\em Dado un nodo devuelve los nodos más proximos a el que lo rodean es decir sus nodos vecinos. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a0acd89c6420f7edc3c8ee8169662b67b}{node\+Incongnite} ()
+\begin{DoxyCompactList}\small\item\em Segun el tipo de cada nodo se determina que nodos son incognita y para que nodos se conoce la solución en ese punto, y son almacenados en memoria. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{class_mesh_ab798a46d1133887500152df4dfe40736}{piP} (std\+::vector$<$ std\+::pair$<$ double, double $>$$>$ \&vertices)
+\begin{DoxyCompactList}\small\item\em Se implementa el algoritmo Point\+In\+Polygon, el cual determina para un poligono convexo si un punto se encuentra en su interior o en su exterior. \end{DoxyCompactList}\item 
+int \hyperlink{class_mesh_a53a4d94cd56d2cb6439519645269d380}{n\+Node\+Incongnite} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de nodos incognta que se tienen en la malla. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \& \hyperlink{class_mesh_a7860c41775b643917ea5e8d763ba0505}{borde\+Node} ()
+\begin{DoxyCompactList}\small\item\em Devuelve un vector con los nodos de frontera. \end{DoxyCompactList}\item 
+double \hyperlink{class_mesh_a7fcfd56c6f730879f51ff07153091f91}{coordX} (int node)
+\begin{DoxyCompactList}\small\item\em Dado un nodo cualquiera de la malla devuelve su coordenada en x. \end{DoxyCompactList}\item 
+double \hyperlink{class_mesh_af4f621b62849423e299f681acb4e253c}{coordY} (int node)
+\begin{DoxyCompactList}\small\item\em Dado un nodo cualquiera de la malla devuelve su coordenada en y. \end{DoxyCompactList}\item 
+double \hyperlink{class_mesh_adef108df36f29f4880a9233075e04210}{value} (int node)
+\begin{DoxyCompactList}\small\item\em Dado un nodo frontera devuelve su valor. \end{DoxyCompactList}\item 
+int \hyperlink{class_mesh_aef283d305e17ab48771999e7835ed294}{type} (int node)
+\begin{DoxyCompactList}\small\item\em Dado un nodo frontera devuelve su tipo. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \& \hyperlink{class_mesh_add85351d5f09484fa3b4dd43d1043ae9}{Incognite} ()
+\begin{DoxyCompactList}\small\item\em Devuelve los nodos incognita. \end{DoxyCompactList}\item 
+int \hyperlink{class_mesh_abc68a06825b9554803c18248501338c7}{n\+Node} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el numero total de nodos de una malla. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_ab390b1e1292e0236b1a3d35c6b738228}{show\+Gmsh} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&coord, std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&elemn)
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla los nodos y los elementos leidos del archivo gmsh segun la numeracion por defecto. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_ac5eb1247da3ed432323f1dd8aebbf554}{show\+Node} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla los nodos con sus coordenadas ordenados. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a0d528aac55b1e4c2a6f5049f9d2cf90d}{show\+Element} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla la nueva composición de los elementos según la nueva numeración. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_ac8d60f17c950dca8ef1a6288860bd3cb}{show\+Node\+Element} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla la cantidad de nodos y elementos totales de la malla. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a90fd6f1f7a64ff29d1eeee72c22142d2}{show\+Relation} (std\+::vector$<$ int $>$ \&relation)
+\begin{DoxyCompactList}\small\item\em Mostramos en pantalla la relacion de la numeración ordenada con la numeración de gmsh. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a4de5c225341eb4fc73810d1415eb57da}{show\+Node\+IF} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla que nodos son interiores y que nodos son frontera. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a759b0e82f01de4d168b2a30e5280df3c}{show\+Area} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla el area de cada elemento triangular que fue calculado. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a895299dd6c9c2e2ffb5ef59becc81fd3}{show\+Element\+Support\+Node} ()
+\begin{DoxyCompactList}\small\item\em Mostramos en pantalla los elementos soporte de cada nodo. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a45a42ffc6565851e50e47b6b618c22f5}{show\+Boundary\+Condition} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla los nodos frontera con su valor asignado y de que tipo son. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a01bf98587a47624696aa808efac92ad8}{shownode\+Dirichlet} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla los nodos de frontera tipo Dirchlet. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a0a4f5148e80cc4a1df6db20e149515a2}{shownode\+Neumman} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla los nodos de frontera tipo Dirchlet. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_aeca4f92ea58c7c4f87e33df91ac33574}{show\+Neighborh} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla los nodos vecinos de cada nodo. \end{DoxyCompactList}\item 
+void \hyperlink{class_mesh_a941977c20a68f58aa11d264fb30f3032}{show\+Total} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla el numero total de nodos y de elementos de un dominio de interes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Los objetos tipos mesh son contenedores para el dominio de interes generado con la herramienta gmsh. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6/12/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Mario Arturo Nieto Butrón  S\+Y\+SG 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_mesh_a54a9cf0f6223e63253c8e9f8f99746b3}{}\label{class_mesh_a54a9cf0f6223e63253c8e9f8f99746b3} 
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::vector$<$ double $>$ \&}]{vertices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor para cargar un archivo $<$nombre$>$.msh y encargado de llamar a initialize(filename), para dar el tratamiento basico a una geometria obtenida con la herramienta gmsh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Ruta de un archivo $<$nombre$>$.msh para leer el dominio de trabajo.  vertices Vertices del dominio. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_mesh_afa6559daf1f8495fd0a796fb31370542}{initialize} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_mesh_a71e8935f4fb4b98e12aefb137ab15131}{}\label{class_mesh_a71e8935f4fb4b98e12aefb137ab15131} 
+\index{Mesh@{Mesh}!area\+Element@{area\+Element}}
+\index{area\+Element@{area\+Element}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{area\+Element()}{areaElement()}}
+{\footnotesize\ttfamily void Mesh\+::area\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Para cada elemento triangular almacenado calcula su área según las coordenadas de sus vertices usando un determinantes, ésta área es almacenada en memoria para su uso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_abe2ade2afc588a69ae7793eac37babfe}{}\label{class_mesh_abe2ade2afc588a69ae7793eac37babfe} 
+\index{Mesh@{Mesh}!bondary\+Condition@{bondary\+Condition}}
+\index{bondary\+Condition@{bondary\+Condition}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{bondary\+Condition()}{bondaryCondition()}}
+{\footnotesize\ttfamily void Mesh\+::bondary\+Condition (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Para cada nodo de frontera se almacena en memoria el tipo de condición de frontera y su valor, solo acepta dos tipos distintos de condiciones de frontera Dirchelet y Neumman. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Valor tipo int, recibe un 0 si se trata de un nodo tipo Dirichlet y 1 si se trata de un nodo tipo Neumman, en cualquier otro caso termina la ejecución. \\
+\hline
+{\em value} & Tipo double, recibe el valor de frontera de un nodo dado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a7860c41775b643917ea5e8d763ba0505}{}\label{class_mesh_a7860c41775b643917ea5e8d763ba0505} 
+\index{Mesh@{Mesh}!borde\+Node@{borde\+Node}}
+\index{borde\+Node@{borde\+Node}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{borde\+Node()}{bordeNode()}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$\& Mesh\+::borde\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un vector con los nodos de frontera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nodos de frontera 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a8da1c7918301eaf9f6c71979247d2d94}{}\label{class_mesh_a8da1c7918301eaf9f6c71979247d2d94} 
+\index{Mesh@{Mesh}!border\+Interior\+Node@{border\+Interior\+Node}}
+\index{border\+Interior\+Node@{border\+Interior\+Node}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{border\+Interior\+Node()}{borderInteriorNode()}}
+{\footnotesize\ttfamily void Mesh\+::border\+Interior\+Node (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{vertices }\end{DoxyParamCaption})}
+
+
+
+Para un dominio rectangular determina que nodos se encuentran sobre la frontera, cuales son interiores y los almacena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Es un vector del tipo std\+::vector$<$double$>$ y debe contener 4 los vertices de un dominio rectangular para hacer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a7fcfd56c6f730879f51ff07153091f91}{}\label{class_mesh_a7fcfd56c6f730879f51ff07153091f91} 
+\index{Mesh@{Mesh}!coordX@{coordX}}
+\index{coordX@{coordX}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{coord\+X()}{coordX()}}
+{\footnotesize\ttfamily double Mesh\+::coordX (\begin{DoxyParamCaption}\item[{int}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dado un nodo cualquiera de la malla devuelve su coordenada en x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Identificador del nodo que se desea su coordenada x \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double valor entero con la coordenada x de un nodo dado 
+\end{DoxyReturn}
+\hypertarget{class_mesh_af4f621b62849423e299f681acb4e253c}{}\label{class_mesh_af4f621b62849423e299f681acb4e253c} 
+\index{Mesh@{Mesh}!coordY@{coordY}}
+\index{coordY@{coordY}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{coord\+Y()}{coordY()}}
+{\footnotesize\ttfamily double Mesh\+::coordY (\begin{DoxyParamCaption}\item[{int}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dado un nodo cualquiera de la malla devuelve su coordenada en y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Identificador del nodo que se desea su coordenada y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double valor entero con la coordenada y de un nodo dado 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a721990c561955657b21953ea704e4e6d}{}\label{class_mesh_a721990c561955657b21953ea704e4e6d} 
+\index{Mesh@{Mesh}!element\+Support\+Node@{element\+Support\+Node}}
+\index{element\+Support\+Node@{element\+Support\+Node}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{element\+Support\+Node()}{elementSupportNode()}}
+{\footnotesize\ttfamily void Mesh\+::element\+Support\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Para cada nodo de la malla se calcula sus elementos soporte; es decir se almacena para cada nodo los elementos en donde aparace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_add85351d5f09484fa3b4dd43d1043ae9}{}\label{class_mesh_add85351d5f09484fa3b4dd43d1043ae9} 
+\index{Mesh@{Mesh}!Incognite@{Incognite}}
+\index{Incognite@{Incognite}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Incognite()}{Incognite()}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$\& Mesh\+::\+Incognite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve los nodos incognita. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ Devuelve los nodos incognita. 
+\end{DoxyReturn}
+\hypertarget{class_mesh_afa6559daf1f8495fd0a796fb31370542}{}\label{class_mesh_afa6559daf1f8495fd0a796fb31370542} 
+\index{Mesh@{Mesh}!initialize@{initialize}}
+\index{initialize@{initialize}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Mesh\+::initialize (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::vector$<$ double $>$ \&}]{vertices }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Ruta de la localización de un archivo gmsh.  vertices Vertices del dominio. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_abc68a06825b9554803c18248501338c7}{}\label{class_mesh_abc68a06825b9554803c18248501338c7} 
+\index{Mesh@{Mesh}!n\+Node@{n\+Node}}
+\index{n\+Node@{n\+Node}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{n\+Node()}{nNode()}}
+{\footnotesize\ttfamily int Mesh\+::n\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el numero total de nodos de una malla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+nnodes Numero total de nodos de la malla 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a53a4d94cd56d2cb6439519645269d380}{}\label{class_mesh_a53a4d94cd56d2cb6439519645269d380} 
+\index{Mesh@{Mesh}!n\+Node\+Incongnite@{n\+Node\+Incongnite}}
+\index{n\+Node\+Incongnite@{n\+Node\+Incongnite}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{n\+Node\+Incongnite()}{nNodeIncongnite()}}
+{\footnotesize\ttfamily int Mesh\+::n\+Node\+Incongnite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el numero de nodos incognta que se tienen en la malla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a0acd89c6420f7edc3c8ee8169662b67b}{}\label{class_mesh_a0acd89c6420f7edc3c8ee8169662b67b} 
+\index{Mesh@{Mesh}!node\+Incongnite@{node\+Incongnite}}
+\index{node\+Incongnite@{node\+Incongnite}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{node\+Incongnite()}{nodeIncongnite()}}
+{\footnotesize\ttfamily void Mesh\+::node\+Incongnite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Segun el tipo de cada nodo se determina que nodos son incognita y para que nodos se conoce la solución en ese punto, y son almacenados en memoria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a9f8707ebeb80eeca1d41ea67a56f7205}{}\label{class_mesh_a9f8707ebeb80eeca1d41ea67a56f7205} 
+\index{Mesh@{Mesh}!node\+Neighborh@{node\+Neighborh}}
+\index{node\+Neighborh@{node\+Neighborh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{node\+Neighborh()}{nodeNeighborh()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Mesh\+::node\+Neighborh (\begin{DoxyParamCaption}\item[{int}]{node }\end{DoxyParamCaption})}
+
+
+
+Dado un nodo devuelve los nodos más proximos a el que lo rodean es decir sus nodos vecinos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Identificador del nodo del que se desea conocer sus vecinos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un vector de tipo std\+::vector$<$int$>$ que contiene los nodos vecinos 
+\end{DoxyReturn}
+\hypertarget{class_mesh_ab798a46d1133887500152df4dfe40736}{}\label{class_mesh_ab798a46d1133887500152df4dfe40736} 
+\index{Mesh@{Mesh}!piP@{piP}}
+\index{piP@{piP}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{pi\+P()}{piP()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Mesh\+::piP (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$$>$ \&}]{vertices }\end{DoxyParamCaption})}
+
+
+
+Se implementa el algoritmo Point\+In\+Polygon, el cual determina para un poligono convexo si un punto se encuentra en su interior o en su exterior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & arreglo de tipo std\+::vector$<$std\+::pair$<$double,double$>$$>$ almacena los vertices de un poligono convexo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nodes regresa un arreglo de tipo std\+::vector$<$int$>$ el cual indica que nodos están dentro del poligono. 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a0885d845bc4001d43d7d92a0a98a127a}{}\label{class_mesh_a0885d845bc4001d43d7d92a0a98a127a} 
+\index{Mesh@{Mesh}!read\+File\+G\+M\+SH@{read\+File\+G\+M\+SH}}
+\index{read\+File\+G\+M\+SH@{read\+File\+G\+M\+SH}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{read\+File\+G\+M\+S\+H()}{readFileGMSH()}}
+{\footnotesize\ttfamily void Mesh\+::read\+File\+G\+M\+SH (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&}]{coord,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{elemn }\end{DoxyParamCaption})}
+
+
+
+Lee un archivo $\ast$.msh generado con la herramienta gmsh y almacena las coordenadas y los elementos triangulares que lo conforman. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Ruta de la localización de un archivo gmsh. \\
+\hline
+{\em coord} & Matriz de tipo std\+::vector$<$std\+::vector$<$double$>$$>$ para almacenar las coordenadas de cada nodo de la malla segun la numeracion por gmsh. \\
+\hline
+{\em elemn} & Matriz de tipo std\+::vector$<$std\+::vector$<$int$>$$>$ para almacenar los elementos triangulares y su nodos que lo conforman segun la numeración de gmsh. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a88e3d635b654e3122774b3e49770648e}{}\label{class_mesh_a88e3d635b654e3122774b3e49770648e} 
+\index{Mesh@{Mesh}!relation\+Nodes@{relation\+Nodes}}
+\index{relation\+Nodes@{relation\+Nodes}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{relation\+Nodes()}{relationNodes()}}
+{\footnotesize\ttfamily void Mesh\+::relation\+Nodes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&}]{coord,  }\item[{std\+::vector$<$ int $>$ \&}]{relation }\end{DoxyParamCaption})}
+
+
+
+Toma los nodos ordenados y los desordenados y devuelve una relacion entre ellos, donde el indice de relation se refiere a la numeración de gmsh y el contenido indica a que lugar se movio en los nodos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Recibe} & una matriz de la forma std\+::vector$<$std\+::vector$<$double$>$$>$ que debera contener las coordenada X y Y de cada nodo de la malla \\
+\hline
+{\em \hyperlink{class_vector}{Vector}} & de tipo std\+::vector$<$int$>$, en donde será almacenada temporalmente la relacion entre la numeración de gmsh y la numeración de los nodos ordenados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a7972a36435ea43732b4611a3765c28f6}{}\label{class_mesh_a7972a36435ea43732b4611a3765c28f6} 
+\index{Mesh@{Mesh}!reorder\+Element@{reorder\+Element}}
+\index{reorder\+Element@{reorder\+Element}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{reorder\+Element()}{reorderElement()}}
+{\footnotesize\ttfamily void Mesh\+::reorder\+Element (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{elemn,  }\item[{std\+::vector$<$ int $>$ \&}]{relation }\end{DoxyParamCaption})}
+
+
+
+Se reordenan los elementos segun la nueva numeracion de los nodos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elemn} & \hyperlink{class_vector}{Vector} del tipo std\+::vector$<$int$>$$>$ que contiene cada elemento y los nodos que contiene \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a1a49aea1d3aa8ccf4f8acd367906b4ab}{}\label{class_mesh_a1a49aea1d3aa8ccf4f8acd367906b4ab} 
+\index{Mesh@{Mesh}!reorder\+Node@{reorder\+Node}}
+\index{reorder\+Node@{reorder\+Node}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{reorder\+Node()}{reorderNode()}}
+{\footnotesize\ttfamily void Mesh\+::reorder\+Node (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&}]{coord }\end{DoxyParamCaption})}
+
+
+
+Toma los nodos leidos del archivo y cambia el orden dado por G\+M\+SH, ordena primero con respecto a Y y despues con respecto a X de forma tal que se tendra todos los nodos con la misma componente en Y y despues se ordena las x en forma asecendente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Recibe una matriz de la forma std\+::vector$<$std\+::vector$<$double$>$$>$ que debera contener las coordenada X y Y de cada nodo de la malla \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a759b0e82f01de4d168b2a30e5280df3c}{}\label{class_mesh_a759b0e82f01de4d168b2a30e5280df3c} 
+\index{Mesh@{Mesh}!show\+Area@{show\+Area}}
+\index{show\+Area@{show\+Area}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Area()}{showArea()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla el area de cada elemento triangular que fue calculado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a45a42ffc6565851e50e47b6b618c22f5}{}\label{class_mesh_a45a42ffc6565851e50e47b6b618c22f5} 
+\index{Mesh@{Mesh}!show\+Boundary\+Condition@{show\+Boundary\+Condition}}
+\index{show\+Boundary\+Condition@{show\+Boundary\+Condition}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Boundary\+Condition()}{showBoundaryCondition()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Boundary\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla los nodos frontera con su valor asignado y de que tipo son. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a0d528aac55b1e4c2a6f5049f9d2cf90d}{}\label{class_mesh_a0d528aac55b1e4c2a6f5049f9d2cf90d} 
+\index{Mesh@{Mesh}!show\+Element@{show\+Element}}
+\index{show\+Element@{show\+Element}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Element()}{showElement()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla la nueva composición de los elementos según la nueva numeración. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a895299dd6c9c2e2ffb5ef59becc81fd3}{}\label{class_mesh_a895299dd6c9c2e2ffb5ef59becc81fd3} 
+\index{Mesh@{Mesh}!show\+Element\+Support\+Node@{show\+Element\+Support\+Node}}
+\index{show\+Element\+Support\+Node@{show\+Element\+Support\+Node}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Element\+Support\+Node()}{showElementSupportNode()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Element\+Support\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mostramos en pantalla los elementos soporte de cada nodo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_mesh_ab390b1e1292e0236b1a3d35c6b738228}{}\label{class_mesh_ab390b1e1292e0236b1a3d35c6b738228} 
+\index{Mesh@{Mesh}!show\+Gmsh@{show\+Gmsh}}
+\index{show\+Gmsh@{show\+Gmsh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Gmsh()}{showGmsh()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Gmsh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&}]{coord,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{elemn }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla los nodos y los elementos leidos del archivo gmsh segun la numeracion por defecto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Matriz de tipo std\+::vector$<$std\+::vector$<$double$>$$>$ que contiene las coordenadas de cada nodo de la malla. \\
+\hline
+{\em elemn} & Matriz de tipo std\+::vector$<$std\+::vector$<$int$>$$>$ que contiene los elementos y los nodos que lo conforman. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_aeca4f92ea58c7c4f87e33df91ac33574}{}\label{class_mesh_aeca4f92ea58c7c4f87e33df91ac33574} 
+\index{Mesh@{Mesh}!show\+Neighborh@{show\+Neighborh}}
+\index{show\+Neighborh@{show\+Neighborh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Neighborh()}{showNeighborh()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Neighborh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla los nodos vecinos de cada nodo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_ac5eb1247da3ed432323f1dd8aebbf554}{}\label{class_mesh_ac5eb1247da3ed432323f1dd8aebbf554} 
+\index{Mesh@{Mesh}!show\+Node@{show\+Node}}
+\index{show\+Node@{show\+Node}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Node()}{showNode()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla los nodos con sus coordenadas ordenados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a01bf98587a47624696aa808efac92ad8}{}\label{class_mesh_a01bf98587a47624696aa808efac92ad8} 
+\index{Mesh@{Mesh}!shownode\+Dirichlet@{shownode\+Dirichlet}}
+\index{shownode\+Dirichlet@{shownode\+Dirichlet}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{shownode\+Dirichlet()}{shownodeDirichlet()}}
+{\footnotesize\ttfamily void Mesh\+::shownode\+Dirichlet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla los nodos de frontera tipo Dirchlet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_ac8d60f17c950dca8ef1a6288860bd3cb}{}\label{class_mesh_ac8d60f17c950dca8ef1a6288860bd3cb} 
+\index{Mesh@{Mesh}!show\+Node\+Element@{show\+Node\+Element}}
+\index{show\+Node\+Element@{show\+Node\+Element}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Node\+Element()}{showNodeElement()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Node\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla la cantidad de nodos y elementos totales de la malla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a4de5c225341eb4fc73810d1415eb57da}{}\label{class_mesh_a4de5c225341eb4fc73810d1415eb57da} 
+\index{Mesh@{Mesh}!show\+Node\+IF@{show\+Node\+IF}}
+\index{show\+Node\+IF@{show\+Node\+IF}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Node\+I\+F()}{showNodeIF()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Node\+IF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla que nodos son interiores y que nodos son frontera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a0a4f5148e80cc4a1df6db20e149515a2}{}\label{class_mesh_a0a4f5148e80cc4a1df6db20e149515a2} 
+\index{Mesh@{Mesh}!shownode\+Neumman@{shownode\+Neumman}}
+\index{shownode\+Neumman@{shownode\+Neumman}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{shownode\+Neumman()}{shownodeNeumman()}}
+{\footnotesize\ttfamily void Mesh\+::shownode\+Neumman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla los nodos de frontera tipo Dirchlet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a90fd6f1f7a64ff29d1eeee72c22142d2}{}\label{class_mesh_a90fd6f1f7a64ff29d1eeee72c22142d2} 
+\index{Mesh@{Mesh}!show\+Relation@{show\+Relation}}
+\index{show\+Relation@{show\+Relation}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Relation()}{showRelation()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Relation (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{relation }\end{DoxyParamCaption})}
+
+
+
+Mostramos en pantalla la relacion de la numeración ordenada con la numeración de gmsh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a941977c20a68f58aa11d264fb30f3032}{}\label{class_mesh_a941977c20a68f58aa11d264fb30f3032} 
+\index{Mesh@{Mesh}!show\+Total@{show\+Total}}
+\index{show\+Total@{show\+Total}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{show\+Total()}{showTotal()}}
+{\footnotesize\ttfamily void Mesh\+::show\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla el numero total de nodos y de elementos de un dominio de interes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_aef283d305e17ab48771999e7835ed294}{}\label{class_mesh_aef283d305e17ab48771999e7835ed294} 
+\index{Mesh@{Mesh}!type@{type}}
+\index{type@{type}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily int Mesh\+::type (\begin{DoxyParamCaption}\item[{int}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dado un nodo frontera devuelve su tipo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Recibe un identificador de nodo de frontera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve 0 si es Dirichlet y 1 si es Neumman 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a1e306db2532f24a66b8d43cb634afd61}{}\label{class_mesh_a1e306db2532f24a66b8d43cb634afd61} 
+\index{Mesh@{Mesh}!type\+Node\+Border@{type\+Node\+Border}}
+\index{type\+Node\+Border@{type\+Node\+Border}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{type\+Node\+Border()}{typeNodeBorder()}}
+{\footnotesize\ttfamily void Mesh\+::type\+Node\+Border (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Distingue los nodos de frontera en nodos tipo Dirichlet y nodos tipo Neumann. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_mesh_adef108df36f29f4880a9233075e04210}{}\label{class_mesh_adef108df36f29f4880a9233075e04210} 
+\index{Mesh@{Mesh}!value@{value}}
+\index{value@{value}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily double Mesh\+::value (\begin{DoxyParamCaption}\item[{int}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dado un nodo frontera devuelve su valor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Recibe un identificador de nodo de frontera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de la condición de frontera de un nodo. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/Mesh.\+hpp\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/Mesh.\+cpp\end{DoxyCompactItemize}

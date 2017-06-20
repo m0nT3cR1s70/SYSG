@@ -1,0 +1,404 @@
+\hypertarget{class_c_v_f_e_m}{}\section{C\+V\+F\+EM Class Reference}
+\label{class_c_v_f_e_m}\index{C\+V\+F\+EM@{C\+V\+F\+EM}}
+
+
+Cosnstruye la matriz A y el vector b del sistema de ecuaciones AX=b.  
+
+
+
+
+{\ttfamily \#include $<$C\+V\+F\+E\+M.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_v_f_e_m_a9c9edac26e4899b01f5665084f7a27f4}{}\label{class_c_v_f_e_m_a9c9edac26e4899b01f5665084f7a27f4} 
+\hyperlink{class_c_v_f_e_m_a9c9edac26e4899b01f5665084f7a27f4}{C\+V\+F\+EM} ()
+\begin{DoxyCompactList}\small\item\em Inicializa los atributos oir defecto da a la permeabilidad un valor de 1, a la compresibilidad 1.\+0, a la fuente -\/10, a la porosidad 0.\+2 a la densidad 1 y a la gravedad 0. \end{DoxyCompactList}\item 
+\hypertarget{class_c_v_f_e_m_a76eb5e0647bc2c059f9fc23de827f9df}{}\label{class_c_v_f_e_m_a76eb5e0647bc2c059f9fc23de827f9df} 
+\hyperlink{class_c_v_f_e_m_a76eb5e0647bc2c059f9fc23de827f9df}{C\+V\+F\+EM} (double perme, double compre, double fuen, double poro, double dens, double grav)
+\begin{DoxyCompactList}\small\item\em Inicializa los atributos oir defecto da a la permeabilidad un valor de 1, a la compresibilidad 1.\+0, a la fuente -\/10, a la porosidad 0.\+2 a la densidad 1 y a la gravedad 0. \end{DoxyCompactList}\item 
+\hyperlink{class_c_v_f_e_m_a8382798f83bbe4aa428594c56966205c}{C\+V\+F\+EM} (\hyperlink{class_c_v_f_e_m}{C\+V\+F\+EM} \&cvfem)
+\begin{DoxyCompactList}\small\item\em Constructor copia. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_v_f_e_m_a6d522b327c439e211eaafde5695e83f9}{Ab} (\hyperlink{class_c_s_r}{C\+SR} \&A, \hyperlink{class_vector}{Vector} \&b, \hyperlink{class_mesh}{Mesh} \&mesh)
+\begin{DoxyCompactList}\small\item\em Construye el sistema Ax = b segun una permeabilidad homogenea. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_v_f_e_m_afb5dec32452ca35a1354d0a86f338a39}{matrix\+C\+F\+V\+EM} (\hyperlink{class_mesh}{Mesh} \&mesh, \hyperlink{class_c_s_r}{C\+SR} \&csr)
+\begin{DoxyCompactList}\small\item\em Construye la matriz de transmisibilidad usando cada nodo de la malla. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_v_f_e_m_a7323da10f16f95f4650c4cf020696271}{permeabilidad} (\hyperlink{class_mesh}{Mesh} \&mesh)
+\begin{DoxyCompactList}\small\item\em Calcula la permeabilidad para distintos lugares del dominio. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_v_f_e_m_af670f51f93d3f38f146ab05ae1527f4d}{permehar} (double node1, double node2)
+\begin{DoxyCompactList}\small\item\em Calcula un promedio armonico de una propiedad dados dos valores distintos. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_v_f_e_m_a53be673ba0746356b4253b7e1f0699b4}{perme\+Average} (double node1, double node2)
+\begin{DoxyCompactList}\small\item\em Calcula un promedio de una propiedad dados dos valores distintos. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_v_f_e_m_a87658e6d6b736bc98db71cd9dc5ad9a1}{g\+Perme} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la permeabilidad. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_v_f_e_m_a716e517bc0c71ae9fbb76537e5b12138}{s\+Perme} (double \hyperlink{class_c_v_f_e_m_a7323da10f16f95f4650c4cf020696271}{permeabilidad})
+\begin{DoxyCompactList}\small\item\em Modifica el valor de la permeabilidad. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_v_f_e_m_a15cff377e25050b87b01b859330e1334}{g\+Compre} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la compresibilidad. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_v_f_e_m_ac60363ea7805dbb4a8c3d42b5d849bba}{s\+Compre} (double compresibilidad)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de la compresibilidad. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_v_f_e_m_a7b896f4031aad73d3f6369b8eeb1fb2e}{g\+Densidad} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la densidad. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_v_f_e_m_ae28f0a371ddc5ae1728bf26c31762364}{s\+Densidad} (double densidad)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de la densidad. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_v_f_e_m_a83309ce392473cd4d5bb2e1290aac2cf}{g\+Gravedad} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la gravedad. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_v_f_e_m_aa8c7083144c757b4cc59bdaab84c6c0b}{s\+Gravedad} (double gravedad)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de la gravedad. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_v_f_e_m_a5b763bad3cf2dd5d62b9c54d6d98dac6}{g\+Fuente} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la fuente. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_v_f_e_m_a2c3c174843a173f1419c41963e1d8f1f}{s\+Fuente} (double fuente)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de la fuente. \end{DoxyCompactList}\item 
+\hyperlink{class_vector}{Vector} \& \hyperlink{class_c_v_f_e_m_a8e29f1e40b135cee648e08fc151744c7}{g\+K11} ()
+\begin{DoxyCompactList}\small\item\em Devueve el vector k11. \end{DoxyCompactList}\item 
+\hyperlink{class_vector}{Vector} \& \hyperlink{class_c_v_f_e_m_af819a87944fdb7f338182ed8b92aaac6}{g\+K22} ()
+\begin{DoxyCompactList}\small\item\em Devueve el vector k22. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cosnstruye la matriz A y el vector b del sistema de ecuaciones AX=b. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6/12/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Mario Arturo Nieto Butrón  S\+Y\+SG 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_v_f_e_m_a8382798f83bbe4aa428594c56966205c}{}\label{class_c_v_f_e_m_a8382798f83bbe4aa428594c56966205c} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{C\+V\+F\+E\+M()}{CVFEM()}}
+{\footnotesize\ttfamily C\+V\+F\+E\+M\+::\+C\+V\+F\+EM (\begin{DoxyParamCaption}\item[{\hyperlink{class_c_v_f_e_m}{C\+V\+F\+EM} \&}]{cvfem }\end{DoxyParamCaption})}
+
+
+
+Constructor copia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cvfem} & Recibe un onbeto tipo \hyperlink{class_c_v_f_e_m}{C\+V\+F\+EM} para copiarlo en otro \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_v_f_e_m_a6d522b327c439e211eaafde5695e83f9}{}\label{class_c_v_f_e_m_a6d522b327c439e211eaafde5695e83f9} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!Ab@{Ab}}
+\index{Ab@{Ab}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{Ab()}{Ab()}}
+{\footnotesize\ttfamily void C\+V\+F\+E\+M\+::\+Ab (\begin{DoxyParamCaption}\item[{\hyperlink{class_c_s_r}{C\+SR} \&}]{A,  }\item[{\hyperlink{class_vector}{Vector} \&}]{b,  }\item[{\hyperlink{class_mesh}{Mesh} \&}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Construye el sistema Ax = b segun una permeabilidad homogenea. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Recibe toda la información de la geometria. \\
+\hline
+{\em A} & matriz \hyperlink{class_c_s_r}{C\+SR} para dar un almacenamiento minimo. \\
+\hline
+{\em b} & \hyperlink{class_vector}{Vector} V para su construcción. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_v_f_e_m_a15cff377e25050b87b01b859330e1334}{}\label{class_c_v_f_e_m_a15cff377e25050b87b01b859330e1334} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!g\+Compre@{g\+Compre}}
+\index{g\+Compre@{g\+Compre}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{g\+Compre()}{gCompre()}}
+{\footnotesize\ttfamily double C\+V\+F\+E\+M\+::g\+Compre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la compresibilidad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+compresibilidad 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_a7b896f4031aad73d3f6369b8eeb1fb2e}{}\label{class_c_v_f_e_m_a7b896f4031aad73d3f6369b8eeb1fb2e} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!g\+Densidad@{g\+Densidad}}
+\index{g\+Densidad@{g\+Densidad}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{g\+Densidad()}{gDensidad()}}
+{\footnotesize\ttfamily double C\+V\+F\+E\+M\+::g\+Densidad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la densidad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+densidad 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_a5b763bad3cf2dd5d62b9c54d6d98dac6}{}\label{class_c_v_f_e_m_a5b763bad3cf2dd5d62b9c54d6d98dac6} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!g\+Fuente@{g\+Fuente}}
+\index{g\+Fuente@{g\+Fuente}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{g\+Fuente()}{gFuente()}}
+{\footnotesize\ttfamily double C\+V\+F\+E\+M\+::g\+Fuente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la fuente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fuente 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_a83309ce392473cd4d5bb2e1290aac2cf}{}\label{class_c_v_f_e_m_a83309ce392473cd4d5bb2e1290aac2cf} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!g\+Gravedad@{g\+Gravedad}}
+\index{g\+Gravedad@{g\+Gravedad}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{g\+Gravedad()}{gGravedad()}}
+{\footnotesize\ttfamily double C\+V\+F\+E\+M\+::g\+Gravedad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la gravedad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gravedad 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_a8e29f1e40b135cee648e08fc151744c7}{}\label{class_c_v_f_e_m_a8e29f1e40b135cee648e08fc151744c7} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!g\+K11@{g\+K11}}
+\index{g\+K11@{g\+K11}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{g\+K11()}{gK11()}}
+{\footnotesize\ttfamily \hyperlink{class_vector}{Vector}\& C\+V\+F\+E\+M\+::g\+K11 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devueve el vector k11. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+k11 vector tipo K11 con la permeabilidad en cada nodo de la malla. 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_af819a87944fdb7f338182ed8b92aaac6}{}\label{class_c_v_f_e_m_af819a87944fdb7f338182ed8b92aaac6} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!g\+K22@{g\+K22}}
+\index{g\+K22@{g\+K22}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{g\+K22()}{gK22()}}
+{\footnotesize\ttfamily \hyperlink{class_vector}{Vector}\& C\+V\+F\+E\+M\+::g\+K22 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devueve el vector k22. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+k22 vector tipo K22 con la permeabilidad en cada nodo de la malla. 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_a87658e6d6b736bc98db71cd9dc5ad9a1}{}\label{class_c_v_f_e_m_a87658e6d6b736bc98db71cd9dc5ad9a1} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!g\+Perme@{g\+Perme}}
+\index{g\+Perme@{g\+Perme}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{g\+Perme()}{gPerme()}}
+{\footnotesize\ttfamily double C\+V\+F\+E\+M\+::g\+Perme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la permeabilidad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Permeabilidad 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_afb5dec32452ca35a1354d0a86f338a39}{}\label{class_c_v_f_e_m_afb5dec32452ca35a1354d0a86f338a39} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!matrix\+C\+F\+V\+EM@{matrix\+C\+F\+V\+EM}}
+\index{matrix\+C\+F\+V\+EM@{matrix\+C\+F\+V\+EM}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{matrix\+C\+F\+V\+E\+M()}{matrixCFVEM()}}
+{\footnotesize\ttfamily void C\+V\+F\+E\+M\+::matrix\+C\+F\+V\+EM (\begin{DoxyParamCaption}\item[{\hyperlink{class_mesh}{Mesh} \&}]{mesh,  }\item[{\hyperlink{class_c_s_r}{C\+SR} \&}]{csr }\end{DoxyParamCaption})}
+
+
+
+Construye la matriz de transmisibilidad usando cada nodo de la malla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Recibe toda la información de la geometria. \\
+\hline
+{\em A} & matriz \hyperlink{class_c_s_r}{C\+SR} para dar un almacenamiento minimo. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_v_f_e_m_a7323da10f16f95f4650c4cf020696271}{}\label{class_c_v_f_e_m_a7323da10f16f95f4650c4cf020696271} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!permeabilidad@{permeabilidad}}
+\index{permeabilidad@{permeabilidad}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{permeabilidad()}{permeabilidad()}}
+{\footnotesize\ttfamily void C\+V\+F\+E\+M\+::permeabilidad (\begin{DoxyParamCaption}\item[{\hyperlink{class_mesh}{Mesh} \&}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Calcula la permeabilidad para distintos lugares del dominio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Recibe la malla discretizada para asignar a cada nodo una permeabilidad aleatoria \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_v_f_e_m_a53be673ba0746356b4253b7e1f0699b4}{}\label{class_c_v_f_e_m_a53be673ba0746356b4253b7e1f0699b4} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!perme\+Average@{perme\+Average}}
+\index{perme\+Average@{perme\+Average}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{perme\+Average()}{permeAverage()}}
+{\footnotesize\ttfamily double C\+V\+F\+E\+M\+::perme\+Average (\begin{DoxyParamCaption}\item[{double}]{node1,  }\item[{double}]{node2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula un promedio de una propiedad dados dos valores distintos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node1} & Recibe el valor de una propiedad en un nodo. \\
+\hline
+{\em node2} & Recibe el valor de una propoiedad en un nodo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Promedio de una propiedad dados dos nodos. 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_af670f51f93d3f38f146ab05ae1527f4d}{}\label{class_c_v_f_e_m_af670f51f93d3f38f146ab05ae1527f4d} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!permehar@{permehar}}
+\index{permehar@{permehar}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{permehar()}{permehar()}}
+{\footnotesize\ttfamily double C\+V\+F\+E\+M\+::permehar (\begin{DoxyParamCaption}\item[{double}]{node1,  }\item[{double}]{node2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula un promedio armonico de una propiedad dados dos valores distintos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node1} & Recibe el valor de una propiedad en un nodo. \\
+\hline
+{\em node2} & Recibe el valor de una propoiedad en un nodo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Promedio armonico de una propiedad dados dos nodos. 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_ac60363ea7805dbb4a8c3d42b5d849bba}{}\label{class_c_v_f_e_m_ac60363ea7805dbb4a8c3d42b5d849bba} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!s\+Compre@{s\+Compre}}
+\index{s\+Compre@{s\+Compre}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{s\+Compre()}{sCompre()}}
+{\footnotesize\ttfamily void C\+V\+F\+E\+M\+::s\+Compre (\begin{DoxyParamCaption}\item[{double}]{compresibilidad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica el valor de la compresibilidad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_ae28f0a371ddc5ae1728bf26c31762364}{}\label{class_c_v_f_e_m_ae28f0a371ddc5ae1728bf26c31762364} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!s\+Densidad@{s\+Densidad}}
+\index{s\+Densidad@{s\+Densidad}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{s\+Densidad()}{sDensidad()}}
+{\footnotesize\ttfamily void C\+V\+F\+E\+M\+::s\+Densidad (\begin{DoxyParamCaption}\item[{double}]{densidad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica el valor de la densidad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_a2c3c174843a173f1419c41963e1d8f1f}{}\label{class_c_v_f_e_m_a2c3c174843a173f1419c41963e1d8f1f} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!s\+Fuente@{s\+Fuente}}
+\index{s\+Fuente@{s\+Fuente}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{s\+Fuente()}{sFuente()}}
+{\footnotesize\ttfamily double C\+V\+F\+E\+M\+::s\+Fuente (\begin{DoxyParamCaption}\item[{double}]{fuente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica el valor de la fuente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fuente} & Nuevo valor para la fuente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_aa8c7083144c757b4cc59bdaab84c6c0b}{}\label{class_c_v_f_e_m_aa8c7083144c757b4cc59bdaab84c6c0b} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!s\+Gravedad@{s\+Gravedad}}
+\index{s\+Gravedad@{s\+Gravedad}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{s\+Gravedad()}{sGravedad()}}
+{\footnotesize\ttfamily void C\+V\+F\+E\+M\+::s\+Gravedad (\begin{DoxyParamCaption}\item[{double}]{gravedad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica el valor de la gravedad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gravedad} & Nuevo valor para la gravedad \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_v_f_e_m_a716e517bc0c71ae9fbb76537e5b12138}{}\label{class_c_v_f_e_m_a716e517bc0c71ae9fbb76537e5b12138} 
+\index{C\+V\+F\+EM@{C\+V\+F\+EM}!s\+Perme@{s\+Perme}}
+\index{s\+Perme@{s\+Perme}!C\+V\+F\+EM@{C\+V\+F\+EM}}
+\subsubsection{\texorpdfstring{s\+Perme()}{sPerme()}}
+{\footnotesize\ttfamily void C\+V\+F\+E\+M\+::s\+Perme (\begin{DoxyParamCaption}\item[{double}]{permeabilidad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica el valor de la permeabilidad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em permeabilidad} & Valor real con el nuevo valor de permeabilidad \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/C\+V\+F\+E\+M.\+hpp\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/C\+V\+F\+E\+M.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,165 @@
+\hypertarget{class_b_i_c_g_s_t_a_b}{}\section{B\+I\+C\+G\+S\+T\+AB Class Reference}
+\label{class_b_i_c_g_s_t_a_b}\index{B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}}
+
+
+Se implementa el método numerico \hyperlink{class_b_i_c_g_s_t_a_b}{B\+I\+C\+G\+S\+T\+AB} para la solución de sistemas de ecuaciones lineales. En este caso sirve para la matriz de tipo \hyperlink{class_c_s_r}{C\+SR}.  
+
+
+
+
+{\ttfamily \#include $<$B\+I\+C\+G\+S\+T\+A\+B.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_b_i_c_g_s_t_a_b_ab4ac9632753d3529181548e0989528ef}{}\label{class_b_i_c_g_s_t_a_b_ab4ac9632753d3529181548e0989528ef} 
+\hyperlink{class_b_i_c_g_s_t_a_b_ab4ac9632753d3529181548e0989528ef}{B\+I\+C\+G\+S\+T\+AB} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_b_i_c_g_s_t_a_b_a42ac97e59e0fef0d65837b68bc89e815}{}\label{class_b_i_c_g_s_t_a_b_a42ac97e59e0fef0d65837b68bc89e815} 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries solve} (T \&A, \hyperlink{class_vector}{Vector} \&x, \hyperlink{class_vector}{Vector} \&b)
+\item 
+\hypertarget{class_b_i_c_g_s_t_a_b_ae128d5662be6394f7e06252e1cb967eb}{}\label{class_b_i_c_g_s_t_a_b_ae128d5662be6394f7e06252e1cb967eb} 
+{\footnotesize template$<$class T , class U $>$ }\\void {\bfseries solve} (T \&A, \hyperlink{class_vector}{Vector} \&x, \hyperlink{class_vector}{Vector} \&b, U \&M)
+\item 
+int \hyperlink{class_b_i_c_g_s_t_a_b_aecce9b8f005c466d331c57abf249a11a}{its} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de iteraciones realizadas. \end{DoxyCompactList}\item 
+double \hyperlink{class_b_i_c_g_s_t_a_b_adc1e9aff5858970c125b18d0ab5ea52b}{error} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el error calculado de la matriz. \end{DoxyCompactList}\item 
+double \hyperlink{class_b_i_c_g_s_t_a_b_a6a09944cd69150098c82760d058d4857}{tim} ()
+\begin{DoxyCompactList}\small\item\em Tiempo utilizado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\item 
+void \hyperlink{class_b_i_c_g_s_t_a_b_a4fbacde944b86eb6fb24b1ea6f45d5c1}{max\+Its} (int it)
+\begin{DoxyCompactList}\small\item\em Define un nuevo numero de iteraciones maximas permitidas. \end{DoxyCompactList}\item 
+void \hyperlink{class_b_i_c_g_s_t_a_b_ab0a72020c9ea0f2fecf806e973c1b41e}{tole} (double t)
+\begin{DoxyCompactList}\small\item\em Define una nueva tolerancia para el método de \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\item 
+void \hyperlink{class_b_i_c_g_s_t_a_b_a5ebc32bd9c0892557018802781f7c65a}{report} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla un reporte del algoritmo \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Se implementa el método numerico \hyperlink{class_b_i_c_g_s_t_a_b}{B\+I\+C\+G\+S\+T\+AB} para la solución de sistemas de ecuaciones lineales. En este caso sirve para la matriz de tipo \hyperlink{class_c_s_r}{C\+SR}. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6/12/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Mario Arturo Nieto Butrón  S\+Y\+SG 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_b_i_c_g_s_t_a_b_adc1e9aff5858970c125b18d0ab5ea52b}{}\label{class_b_i_c_g_s_t_a_b_adc1e9aff5858970c125b18d0ab5ea52b} 
+\index{B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}!error@{error}}
+\index{error@{error}!B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}}
+\subsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily double B\+I\+C\+G\+S\+T\+A\+B\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el error calculado de la matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+errP Error alcanzado con el método \hyperlink{class_jacobi}{Jacobi}. 
+\end{DoxyReturn}
+\hypertarget{class_b_i_c_g_s_t_a_b_aecce9b8f005c466d331c57abf249a11a}{}\label{class_b_i_c_g_s_t_a_b_aecce9b8f005c466d331c57abf249a11a} 
+\index{B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}!its@{its}}
+\index{its@{its}!B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}}
+\subsubsection{\texorpdfstring{its()}{its()}}
+{\footnotesize\ttfamily int B\+I\+C\+G\+S\+T\+A\+B\+::its (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el numero de iteraciones realizadas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+iterP Numero de iteraciones utilizadas para la convergencia del metodo. 
+\end{DoxyReturn}
+\hypertarget{class_b_i_c_g_s_t_a_b_a4fbacde944b86eb6fb24b1ea6f45d5c1}{}\label{class_b_i_c_g_s_t_a_b_a4fbacde944b86eb6fb24b1ea6f45d5c1} 
+\index{B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}!max\+Its@{max\+Its}}
+\index{max\+Its@{max\+Its}!B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}}
+\subsubsection{\texorpdfstring{max\+Its()}{maxIts()}}
+{\footnotesize\ttfamily void B\+I\+C\+G\+S\+T\+A\+B\+::max\+Its (\begin{DoxyParamCaption}\item[{int}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define un nuevo numero de iteraciones maximas permitidas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Iteraciones nuevas permitidas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_b_i_c_g_s_t_a_b_a5ebc32bd9c0892557018802781f7c65a}{}\label{class_b_i_c_g_s_t_a_b_a5ebc32bd9c0892557018802781f7c65a} 
+\index{B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}!report@{report}}
+\index{report@{report}!B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}}
+\subsubsection{\texorpdfstring{report()}{report()}}
+{\footnotesize\ttfamily void B\+I\+C\+G\+S\+T\+A\+B\+::report (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra en pantalla un reporte del algoritmo \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_b_i_c_g_s_t_a_b_a6a09944cd69150098c82760d058d4857}{}\label{class_b_i_c_g_s_t_a_b_a6a09944cd69150098c82760d058d4857} 
+\index{B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}!tim@{tim}}
+\index{tim@{tim}!B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}}
+\subsubsection{\texorpdfstring{tim()}{tim()}}
+{\footnotesize\ttfamily double B\+I\+C\+G\+S\+T\+A\+B\+::tim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tiempo utilizado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+etimeP Tiempo usado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. 
+\end{DoxyReturn}
+\hypertarget{class_b_i_c_g_s_t_a_b_ab0a72020c9ea0f2fecf806e973c1b41e}{}\label{class_b_i_c_g_s_t_a_b_ab0a72020c9ea0f2fecf806e973c1b41e} 
+\index{B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}!tole@{tole}}
+\index{tole@{tole}!B\+I\+C\+G\+S\+T\+AB@{B\+I\+C\+G\+S\+T\+AB}}
+\subsubsection{\texorpdfstring{tole()}{tole()}}
+{\footnotesize\ttfamily void B\+I\+C\+G\+S\+T\+A\+B\+::tole (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define una nueva tolerancia para el método de \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Valor double con la nueva tolerancia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/B\+I\+C\+G\+S\+T\+A\+B.\+hpp\end{DoxyCompactItemize}

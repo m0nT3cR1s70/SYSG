@@ -1,0 +1,117 @@
+\hypertarget{class_solve}{}\section{Solve Class Reference}
+\label{class_solve}\index{Solve@{Solve}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_solve_ac437f1307c9d4669205ac7d370a55ffc}{}\label{class_solve_ac437f1307c9d4669205ac7d370a55ffc} 
+\hyperlink{class_solve_ac437f1307c9d4669205ac7d370a55ffc}{Solve} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacio para inicializar la clase. \end{DoxyCompactList}\item 
+void \hyperlink{class_solve_a886704acb9e9ec5bd99741b3923fe469}{solution} (\hyperlink{class_mesh}{Mesh} \&mesh, \hyperlink{class_vector}{Vector} \&b, std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Almacena en un archivo de texto la solución para cada nodo de la malla segun el formato x y resultado. \end{DoxyCompactList}\item 
+void \hyperlink{class_solve_a9bfcff2b5df48bc1b0fe22ddaa2b8b29}{laplace2D} (\hyperlink{class_mesh}{Mesh} \&mesh, std\+::string filename, \hyperlink{class_vector}{Vector} \&exacta)
+\begin{DoxyCompactList}\small\item\em Obtiene la solución analitica para la ecuacion de Laplace en 2D y la cual es almacenada en un vector y en un archivo de salida con el formato x,y, solución. \end{DoxyCompactList}\item 
+void \hyperlink{class_solve_a66225d810b2b660ef2206d540973cf02}{laplace2\+DS} (\hyperlink{class_mesh}{Mesh} \&mesh, std\+::string filename, \hyperlink{class_vector}{Vector} \&exacta)
+\begin{DoxyCompactList}\small\item\em Obtiene la solución analitica para la ecuacion de Laplace en 2D en un semicirculo y la cual es almacenada en un vector y en un archivo de salida con el formato x,y, solución. \end{DoxyCompactList}\item 
+void \hyperlink{class_solve_acfbc8ba10f8a9b55011b9687075f0daf}{poisson} (\hyperlink{class_mesh}{Mesh} \&mesh, std\+::string filename, \hyperlink{class_vector}{Vector} \&exacta)
+\begin{DoxyCompactList}\small\item\em Obtiene la solución analitica para la ecuacion de Poisson en 2D y la cual es almacenada en un vector y en un archivo de salida con el formato x,y, solución. \end{DoxyCompactList}\item 
+void \hyperlink{class_solve_a0f838d919aae1c9123b95b411f3a6828}{perme11} (\hyperlink{class_mesh}{Mesh} \&mesh, \hyperlink{class_vector}{Vector} \&b, std\+::string filename)
+\item 
+\hypertarget{class_solve_a6f69b3ca8d1a9e572d0e67a60c74bf3e}{}\label{class_solve_a6f69b3ca8d1a9e572d0e67a60c74bf3e} 
+void \hyperlink{class_solve_a6f69b3ca8d1a9e572d0e67a60c74bf3e}{perme22} (\hyperlink{class_mesh}{Mesh} \&mesh, \hyperlink{class_vector}{Vector} \&b, std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Almacena la permeabilidad de cada punto de la malla, la componente k11 del vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_solve_a9bfcff2b5df48bc1b0fe22ddaa2b8b29}{}\label{class_solve_a9bfcff2b5df48bc1b0fe22ddaa2b8b29} 
+\index{Solve@{Solve}!laplace2D@{laplace2D}}
+\index{laplace2D@{laplace2D}!Solve@{Solve}}
+\subsubsection{\texorpdfstring{laplace2\+D()}{laplace2D()}}
+{\footnotesize\ttfamily void Solve\+::laplace2D (\begin{DoxyParamCaption}\item[{\hyperlink{class_mesh}{Mesh} \&}]{mesh,  }\item[{std\+::string}]{filename,  }\item[{\hyperlink{class_vector}{Vector} \&}]{exacta }\end{DoxyParamCaption})}
+
+
+
+Obtiene la solución analitica para la ecuacion de Laplace en 2D y la cual es almacenada en un vector y en un archivo de salida con el formato x,y, solución. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Objeto de tipo mesh con toda la información de la malla usada en la aproximación. \\
+\hline
+{\em filename} & nombre del archivo en donde se almacenara la solución. \\
+\hline
+{\em exacta} & Almacena la solución exacta del problema en un vector \\
+\hline
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_solve_a66225d810b2b660ef2206d540973cf02}{}\label{class_solve_a66225d810b2b660ef2206d540973cf02} 
+\index{Solve@{Solve}!laplace2\+DS@{laplace2\+DS}}
+\index{laplace2\+DS@{laplace2\+DS}!Solve@{Solve}}
+\subsubsection{\texorpdfstring{laplace2\+D\+S()}{laplace2DS()}}
+{\footnotesize\ttfamily void Solve\+::laplace2\+DS (\begin{DoxyParamCaption}\item[{\hyperlink{class_mesh}{Mesh} \&}]{mesh,  }\item[{std\+::string}]{filename,  }\item[{\hyperlink{class_vector}{Vector} \&}]{exacta }\end{DoxyParamCaption})}
+
+
+
+Obtiene la solución analitica para la ecuacion de Laplace en 2D en un semicirculo y la cual es almacenada en un vector y en un archivo de salida con el formato x,y, solución. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Objeto de tipo mesh con toda la información de la malla usada en la aproximación. \\
+\hline
+{\em filename} & nombre del archivo en donde se almacenara la solución. \\
+\hline
+{\em exacta} & Almacena la solución exacta del problema en un vector \\
+\hline
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_solve_a0f838d919aae1c9123b95b411f3a6828}{}\label{class_solve_a0f838d919aae1c9123b95b411f3a6828} 
+\index{Solve@{Solve}!perme11@{perme11}}
+\index{perme11@{perme11}!Solve@{Solve}}
+\subsubsection{\texorpdfstring{perme11()}{perme11()}}
+{\footnotesize\ttfamily void Solve\+::perme11 (\begin{DoxyParamCaption}\item[{\hyperlink{class_mesh}{Mesh} \&}]{mesh,  }\item[{\hyperlink{class_vector}{Vector} \&}]{b,  }\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+la permeabilidad de cada punto de la malla, la componente k11 del vector. \hypertarget{class_solve_acfbc8ba10f8a9b55011b9687075f0daf}{}\label{class_solve_acfbc8ba10f8a9b55011b9687075f0daf} 
+\index{Solve@{Solve}!poisson@{poisson}}
+\index{poisson@{poisson}!Solve@{Solve}}
+\subsubsection{\texorpdfstring{poisson()}{poisson()}}
+{\footnotesize\ttfamily void Solve\+::poisson (\begin{DoxyParamCaption}\item[{\hyperlink{class_mesh}{Mesh} \&}]{mesh,  }\item[{std\+::string}]{filename,  }\item[{\hyperlink{class_vector}{Vector} \&}]{exacta }\end{DoxyParamCaption})}
+
+
+
+Obtiene la solución analitica para la ecuacion de Poisson en 2D y la cual es almacenada en un vector y en un archivo de salida con el formato x,y, solución. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Objeto de tipo mesh con toda la información de la malla usada en la aproximación. \\
+\hline
+{\em filename} & nombre del archivo en donde se almacenara la solución. \\
+\hline
+{\em exacta} & Almacena la solución exacta del problema en un vector \\
+\hline
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_solve_a886704acb9e9ec5bd99741b3923fe469}{}\label{class_solve_a886704acb9e9ec5bd99741b3923fe469} 
+\index{Solve@{Solve}!solution@{solution}}
+\index{solution@{solution}!Solve@{Solve}}
+\subsubsection{\texorpdfstring{solution()}{solution()}}
+{\footnotesize\ttfamily void Solve\+::solution (\begin{DoxyParamCaption}\item[{\hyperlink{class_mesh}{Mesh} \&}]{mesh,  }\item[{\hyperlink{class_vector}{Vector} \&}]{b,  }\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Almacena en un archivo de texto la solución para cada nodo de la malla segun el formato x y resultado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/Solve.\+hpp\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/Solve.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,293 @@
+\hypertarget{class_c_o_o}{}\section{C\+OO Class Reference}
+\label{class_c_o_o}\index{C\+OO@{C\+OO}}
+
+
+El \hyperlink{class_c_v_f_e_m}{C\+V\+F\+EM} devuelve matrices con un gran contenido de ceros en sus entradas que no son significativas en su calculo por lo tanto se requieren utilizar esquemas de almacenamiento, que consideren unicamiente la información necesaria, en éste caso se implementa el esquema \hyperlink{class_c_o_o}{C\+OO}. El esquema \hyperlink{class_c_o_o}{C\+OO} requiere de tres contenerdores\+: data row col en data se almacenan los componentes no cero de la matriz, en row se almacenan las coordenadas i de la matriz y finalmente en row son almacenadas las coordenadas j. En este caso se usan como contenerdores arreglos estaticos, por tal motivo el usuario debera de indicar de manera aproximada la cantidad de componentes totales que almacenara una matriz, a su vez el sistema multiplicara por 30 esta aproximación de manera que sea poco factible que se llene.  
+
+
+
+
+{\ttfamily \#include $<$C\+O\+O.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_o_o_a7b4a71cec6c2258fdc9dfdd68d51fb20}{}\label{class_c_o_o_a7b4a71cec6c2258fdc9dfdd68d51fb20} 
+\hyperlink{class_c_o_o_a7b4a71cec6c2258fdc9dfdd68d51fb20}{C\+OO} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. \end{DoxyCompactList}\item 
+\hyperlink{class_c_o_o_a0a3f4384fb7f86ca45f54035c6cd51e2}{C\+OO} (int m)
+\begin{DoxyCompactList}\small\item\em Constructor que inicializa el contenido de las variables con una aproximacion de cuanta memomoria se requiere para almacenar una matriz. \end{DoxyCompactList}\item 
+\hyperlink{class_c_o_o_ab4feb4eeee801fa7a11b9404e6f25702}{C\+OO} (\hyperlink{class_c_o_o}{C\+OO} \&Acoo)
+\begin{DoxyCompactList}\small\item\em Constructor copia. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_o_o_af5c55b17a0058d0a3102ca0fc46ba737}{resize} (int m)
+\begin{DoxyCompactList}\small\item\em Se redimensiona una matriz para almacenar mas o menos elementos, si la matriz contaba con elementos estos ya no estaran disponibles para el usuario. \end{DoxyCompactList}\item 
+\hypertarget{class_c_o_o_ad04def9bf37bce94300c2f6e63be92fb}{}\label{class_c_o_o_ad04def9bf37bce94300c2f6e63be92fb} 
+void \hyperlink{class_c_o_o_ad04def9bf37bce94300c2f6e63be92fb}{zeros} ()
+\begin{DoxyCompactList}\small\item\em Inicializa con ceros todos los elementos de la matriz aproximada. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_o_o_aee56cd714cd4b534a31710efa5fb2ee8}{insert} (int i, int j, double val)
+\begin{DoxyCompactList}\small\item\em Almacena los componentes de una matriz, si se desea almacener un elemento en una posicion ya ocupada entonces se suma el valor anterior con el valor actual. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_o_o_a6d547f9db3f93c97fecc92a4ff4207cd}{insertS} (int i, int j, double val)
+\begin{DoxyCompactList}\small\item\em Busca un elemento en la matriz, si este ya se encuentra dentro, entonces le suma un valor, si no esta entonces lo almacena de nuevo, esta es una operación ineficiente debido que se debe buscar siempre si el valor ya esta dentro de la matriz, su complejidad es del orden O(nnz). \end{DoxyCompactList}\item 
+double \hyperlink{class_c_o_o_aa256b26277dfa7018db115f4fad65406}{value} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Leemos el valor de un elemento de la matriz y lo devolvemos, esta es una operación ineficiente su complejidad es del orden O(nnz). \end{DoxyCompactList}\item 
+int \hyperlink{class_c_o_o_a58c17d489f68d78f7f9c948a01ec93de}{gN} () const
+\begin{DoxyCompactList}\small\item\em Devuelve la aproximación dada por el usuario. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_o_o_a579bd9ac3578ef00a72df67563742025}{g\+Nnz} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de elementos de la matriz. \end{DoxyCompactList}\item 
+double \hyperlink{class_c_o_o_af6e823999338171d1da2e434a89ef5d0}{g\+Data} (int l) const
+\begin{DoxyCompactList}\small\item\em Devuelve el contendio de una localidad de data. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_o_o_a6ad2d0b5f295069c1dc0c31662afe336}{g\+Row} (int l) const
+\begin{DoxyCompactList}\small\item\em Devuelve el contendio de una localidad de row. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_o_o_ab6f8719b7f6ef51b9785bea5969b6ed9}{g\+Col} (int l) const
+\begin{DoxyCompactList}\small\item\em Devuelve el contendio de una localidad de col. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_o_o_a33a3d395ce41eef9d071615df01d721f}{imp\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Imprime en pantalla el contenido de la matriz, en formato matriz. \end{DoxyCompactList}\item 
+\hypertarget{class_c_o_o_aa86af3bc5b93a8978e4fc35531486214}{}\label{class_c_o_o_aa86af3bc5b93a8978e4fc35531486214} 
+\hyperlink{class_c_o_o_aa86af3bc5b93a8978e4fc35531486214}{$\sim$\+C\+OO} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+El \hyperlink{class_c_v_f_e_m}{C\+V\+F\+EM} devuelve matrices con un gran contenido de ceros en sus entradas que no son significativas en su calculo por lo tanto se requieren utilizar esquemas de almacenamiento, que consideren unicamiente la información necesaria, en éste caso se implementa el esquema \hyperlink{class_c_o_o}{C\+OO}. El esquema \hyperlink{class_c_o_o}{C\+OO} requiere de tres contenerdores\+: data row col en data se almacenan los componentes no cero de la matriz, en row se almacenan las coordenadas i de la matriz y finalmente en row son almacenadas las coordenadas j. En este caso se usan como contenerdores arreglos estaticos, por tal motivo el usuario debera de indicar de manera aproximada la cantidad de componentes totales que almacenara una matriz, a su vez el sistema multiplicara por 30 esta aproximación de manera que sea poco factible que se llene. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6/12/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Mario Arturo Nieto Butrón  S\+Y\+SG 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_o_o_a0a3f4384fb7f86ca45f54035c6cd51e2}{}\label{class_c_o_o_a0a3f4384fb7f86ca45f54035c6cd51e2} 
+\index{C\+OO@{C\+OO}!C\+OO@{C\+OO}}
+\index{C\+OO@{C\+OO}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{C\+O\+O()}{COO()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+O\+O\+::\+C\+OO (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que inicializa el contenido de las variables con una aproximacion de cuanta memomoria se requiere para almacenar una matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Es un valor entero proporcionado por el usuario que indica de manera aproximada los elementos que son distintos de cero. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_o_o_ab4feb4eeee801fa7a11b9404e6f25702}{}\label{class_c_o_o_ab4feb4eeee801fa7a11b9404e6f25702} 
+\index{C\+OO@{C\+OO}!C\+OO@{C\+OO}}
+\index{C\+OO@{C\+OO}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{C\+O\+O()}{COO()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+O\+O\+::\+C\+OO (\begin{DoxyParamCaption}\item[{\hyperlink{class_c_o_o}{C\+OO} \&}]{Acoo }\end{DoxyParamCaption})}
+
+
+
+Constructor copia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_c_o_o}{C\+OO}} & referencia al objeto a copiar. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_o_o_ab6f8719b7f6ef51b9785bea5969b6ed9}{}\label{class_c_o_o_ab6f8719b7f6ef51b9785bea5969b6ed9} 
+\index{C\+OO@{C\+OO}!g\+Col@{g\+Col}}
+\index{g\+Col@{g\+Col}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{g\+Col()}{gCol()}}
+{\footnotesize\ttfamily int C\+O\+O\+::g\+Col (\begin{DoxyParamCaption}\item[{int}]{l }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el contendio de una localidad de col. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Localidad de data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data componente del contenedor col. 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_af6e823999338171d1da2e434a89ef5d0}{}\label{class_c_o_o_af6e823999338171d1da2e434a89ef5d0} 
+\index{C\+OO@{C\+OO}!g\+Data@{g\+Data}}
+\index{g\+Data@{g\+Data}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{g\+Data()}{gData()}}
+{\footnotesize\ttfamily double C\+O\+O\+::g\+Data (\begin{DoxyParamCaption}\item[{int}]{l }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el contendio de una localidad de data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Localidad de data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data componente del contenedor data. 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_a58c17d489f68d78f7f9c948a01ec93de}{}\label{class_c_o_o_a58c17d489f68d78f7f9c948a01ec93de} 
+\index{C\+OO@{C\+OO}!gN@{gN}}
+\index{gN@{gN}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{g\+N()}{gN()}}
+{\footnotesize\ttfamily int C\+O\+O\+::gN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la aproximación dada por el usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+n valor n con la aproximación del usuario. 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_a579bd9ac3578ef00a72df67563742025}{}\label{class_c_o_o_a579bd9ac3578ef00a72df67563742025} 
+\index{C\+OO@{C\+OO}!g\+Nnz@{g\+Nnz}}
+\index{g\+Nnz@{g\+Nnz}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{g\+Nnz()}{gNnz()}}
+{\footnotesize\ttfamily int C\+O\+O\+::g\+Nnz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el numero de elementos de la matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nnz 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_a6ad2d0b5f295069c1dc0c31662afe336}{}\label{class_c_o_o_a6ad2d0b5f295069c1dc0c31662afe336} 
+\index{C\+OO@{C\+OO}!g\+Row@{g\+Row}}
+\index{g\+Row@{g\+Row}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{g\+Row()}{gRow()}}
+{\footnotesize\ttfamily int C\+O\+O\+::g\+Row (\begin{DoxyParamCaption}\item[{int}]{l }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el contendio de una localidad de row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Localidad de data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data componente del contenedor row. 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_a33a3d395ce41eef9d071615df01d721f}{}\label{class_c_o_o_a33a3d395ce41eef9d071615df01d721f} 
+\index{C\+OO@{C\+OO}!imp\+Matrix@{imp\+Matrix}}
+\index{imp\+Matrix@{imp\+Matrix}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{imp\+Matrix()}{impMatrix()}}
+{\footnotesize\ttfamily void C\+O\+O\+::imp\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime en pantalla el contenido de la matriz, en formato matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_aee56cd714cd4b534a31710efa5fb2ee8}{}\label{class_c_o_o_aee56cd714cd4b534a31710efa5fb2ee8} 
+\index{C\+OO@{C\+OO}!insert@{insert}}
+\index{insert@{insert}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void C\+O\+O\+::insert (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{double}]{val }\end{DoxyParamCaption})}
+
+
+
+Almacena los componentes de una matriz, si se desea almacener un elemento en una posicion ya ocupada entonces se suma el valor anterior con el valor actual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Indice entero i de la matriz. \\
+\hline
+{\em j} & Indice entero j de la matriz. \\
+\hline
+{\em val} & Valor tipo double con el valor del componente de la matriz en el indice i,j. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_a6d547f9db3f93c97fecc92a4ff4207cd}{}\label{class_c_o_o_a6d547f9db3f93c97fecc92a4ff4207cd} 
+\index{C\+OO@{C\+OO}!insertS@{insertS}}
+\index{insertS@{insertS}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{insert\+S()}{insertS()}}
+{\footnotesize\ttfamily void C\+O\+O\+::insertS (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{double}]{val }\end{DoxyParamCaption})}
+
+
+
+Busca un elemento en la matriz, si este ya se encuentra dentro, entonces le suma un valor, si no esta entonces lo almacena de nuevo, esta es una operación ineficiente debido que se debe buscar siempre si el valor ya esta dentro de la matriz, su complejidad es del orden O(nnz). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Indice entero i de la matriz. \\
+\hline
+{\em j} & Indice entero j de la matriz. \\
+\hline
+{\em val} & Valor tipo double con el valor del componente de la matriz en el indice i,j. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_af5c55b17a0058d0a3102ca0fc46ba737}{}\label{class_c_o_o_af5c55b17a0058d0a3102ca0fc46ba737} 
+\index{C\+OO@{C\+OO}!resize@{resize}}
+\index{resize@{resize}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void C\+O\+O\+::resize (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+Se redimensiona una matriz para almacenar mas o menos elementos, si la matriz contaba con elementos estos ya no estaran disponibles para el usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Es un valor entero proporcionado por el usuario que indica de manera aproximada los elementos que son distintos de cero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_c_o_o_aa256b26277dfa7018db115f4fad65406}{}\label{class_c_o_o_aa256b26277dfa7018db115f4fad65406} 
+\index{C\+OO@{C\+OO}!value@{value}}
+\index{value@{value}!C\+OO@{C\+OO}}
+\subsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily double C\+O\+O\+::value (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Leemos el valor de un elemento de la matriz y lo devolvemos, esta es una operación ineficiente su complejidad es del orden O(nnz). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Indice entero i de la matriz. \\
+\hline
+{\em j} & Indice entero j de la matriz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+val Valor tipo double con el valor del componente de la matriz en el indice i,j. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/C\+O\+O.\+hpp\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/C\+O\+O.\+cpp\end{DoxyCompactItemize}

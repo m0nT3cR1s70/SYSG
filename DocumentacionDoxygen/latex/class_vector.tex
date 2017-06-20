@@ -1,0 +1,276 @@
+\hypertarget{class_vector}{}\section{Vector Class Reference}
+\label{class_vector}\index{Vector@{Vector}}
+
+
+Clase para dar tratamiento a los vectores.  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_vector_a6f80c73b5f18dcf3f8e36065bdc8b9e5}{}\label{class_vector_a6f80c73b5f18dcf3f8e36065bdc8b9e5} 
+\hyperlink{class_vector_a6f80c73b5f18dcf3f8e36065bdc8b9e5}{Vector} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacio de la clase \hyperlink{class_vector}{Vector}. \end{DoxyCompactList}\item 
+\hyperlink{class_vector_a96908fb25f0e8236d25650847ee504d5}{Vector} (int n)
+\begin{DoxyCompactList}\small\item\em Solicita espacio en memoria para almacenar las componentes de un vector. \end{DoxyCompactList}\item 
+\hyperlink{class_vector_af2fe7a700bc95cb634f7dd12c2f11b5e}{Vector} (\hyperlink{class_vector}{Vector} const \&v)
+\begin{DoxyCompactList}\small\item\em Constructor copia. \end{DoxyCompactList}\item 
+int \hyperlink{class_vector_a93f0b87707399eaa672d93e54c033f7a}{size} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el tamaño de un vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_vector_a175af2263b569cd6c2b8d3286c02f3a4}{resize} (int n)
+\begin{DoxyCompactList}\small\item\em Redimensiona un vector. \end{DoxyCompactList}\item 
+double \hyperlink{class_vector_a64d1af82e5f8d82c7a6ca5e309c3bf8f}{norm} ()
+\begin{DoxyCompactList}\small\item\em Calcula la norma euclidiana del dado. \end{DoxyCompactList}\item 
+void \hyperlink{class_vector_a3279c16a264024cf6eb49e6d4cef5ad5}{zeros} ()
+\begin{DoxyCompactList}\small\item\em Llena de ceros un vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_vector_a5800036c27dc546cd7db4365d8ce206a}{save\+Data} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Almacena el contenido de un vector en un archivo. \end{DoxyCompactList}\item 
+double \hyperlink{class_vector_a2fa24314ea9397e50c47484705952a55}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em Devuelve un elemento del vector dado su localidad de memoria, es una función de tipo get. \end{DoxyCompactList}\item 
+double \& \hyperlink{class_vector_a8cc4aefe1d880f18feac3426ea8d933e}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\begin{DoxyCompactList}\small\item\em Devuelve una referencia a un vector de tal manera que su contenido pueda ser modificado. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Expr $>$ }\\\hyperlink{class_vector}{Vector} const  \& \hyperlink{class_vector_aa53aac2803bd8fd85ddb426b7d9f2978}{operator=} (Expr const \&expr)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador igual. \end{DoxyCompactList}\item 
+\hypertarget{class_vector_af9c482bf8d0dd412d5f9c4a0b091de72}{}\label{class_vector_af9c482bf8d0dd412d5f9c4a0b091de72} 
+void {\bfseries operator=} (double escalar)
+\item 
+\hypertarget{class_vector_af4b830daed2aedd67659a37ccd718aca}{}\label{class_vector_af4b830daed2aedd67659a37ccd718aca} 
+void {\bfseries operator=} (\hyperlink{class_vector}{Vector} const \&v)
+\item 
+void \hyperlink{class_vector_aca4bf268bf617179662f3e04f6926d07}{print} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla el contenido de un vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_vector_a0ba0b12d5fe6ebde574a30241a52edde}{}\label{class_vector_a0ba0b12d5fe6ebde574a30241a52edde} 
+double $\ast$ {\bfseries \+\_\+data}
+\item 
+\hypertarget{class_vector_ab3ce97d2c2c20389c4b415f7babe5ad0}{}\label{class_vector_ab3ce97d2c2c20389c4b415f7babe5ad0} 
+int {\bfseries \+\_\+size}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_vector_ae3c6610ee1a4ebde040dbf3623b5a8af}{}\label{class_vector_ae3c6610ee1a4ebde040dbf3623b5a8af} 
+double \hyperlink{class_vector_ae3c6610ee1a4ebde040dbf3623b5a8af}{operator$\ast$} (\hyperlink{class_vector}{Vector} const \&v, \hyperlink{class_vector}{Vector} const \&v1)
+\begin{DoxyCompactList}\small\item\em Se implmenta el producto punto dados dos vectores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase para dar tratamiento a los vectores. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6/12/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Mario Arturo Nieto Butrón  S\+Y\+SG 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_vector_a96908fb25f0e8236d25650847ee504d5}{}\label{class_vector_a96908fb25f0e8236d25650847ee504d5} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vector\+::\+Vector (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Solicita espacio en memoria para almacenar las componentes de un vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Valor entero del numero total de elementos a ser almacenados \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_vector_af2fe7a700bc95cb634f7dd12c2f11b5e}{}\label{class_vector_af2fe7a700bc95cb634f7dd12c2f11b5e} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+::\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector}{Vector} const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor copia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Copia el contenido de un vector en otro. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_vector_a64d1af82e5f8d82c7a6ca5e309c3bf8f}{}\label{class_vector_a64d1af82e5f8d82c7a6ca5e309c3bf8f} 
+\index{Vector@{Vector}!norm@{norm}}
+\index{norm@{norm}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily double Vector\+::norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula la norma euclidiana del dado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+euclidana Devuelve la norma euclidiana del vector. 
+\end{DoxyReturn}
+\hypertarget{class_vector_aa53aac2803bd8fd85ddb426b7d9f2978}{}\label{class_vector_aa53aac2803bd8fd85ddb426b7d9f2978} 
+\index{Vector@{Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class Expr $>$ \\
+\hyperlink{class_vector}{Vector} const\& Vector\+::operator= (\begin{DoxyParamCaption}\item[{Expr const \&}]{expr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sobrecarga del operador igual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un} & vector \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_vector_a2fa24314ea9397e50c47484705952a55}{}\label{class_vector_a2fa24314ea9397e50c47484705952a55} 
+\index{Vector@{Vector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Vector\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un elemento del vector dado su localidad de memoria, es una función de tipo get. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Localidad en donde se encuentra un elemento de un vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data componente del vector. 
+\end{DoxyReturn}
+\hypertarget{class_vector_a8cc4aefe1d880f18feac3426ea8d933e}{}\label{class_vector_a8cc4aefe1d880f18feac3426ea8d933e} 
+\index{Vector@{Vector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double\& Vector\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve una referencia a un vector de tal manera que su contenido pueda ser modificado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Localidad en donde se encuentra un elemento de un vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data referencia de un componente del vector. 
+\end{DoxyReturn}
+\hypertarget{class_vector_aca4bf268bf617179662f3e04f6926d07}{}\label{class_vector_aca4bf268bf617179662f3e04f6926d07} 
+\index{Vector@{Vector}!print@{print}}
+\index{print@{print}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Vector\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla el contenido de un vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_vector_a175af2263b569cd6c2b8d3286c02f3a4}{}\label{class_vector_a175af2263b569cd6c2b8d3286c02f3a4} 
+\index{Vector@{Vector}!resize@{resize}}
+\index{resize@{resize}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void Vector\+::resize (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Redimensiona un vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Nuevo tamaño de un vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_vector_a5800036c27dc546cd7db4365d8ce206a}{}\label{class_vector_a5800036c27dc546cd7db4365d8ce206a} 
+\index{Vector@{Vector}!save\+Data@{save\+Data}}
+\index{save\+Data@{save\+Data}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{save\+Data()}{saveData()}}
+{\footnotesize\ttfamily void Vector\+::save\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Almacena el contenido de un vector en un archivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nombre de un archivo para almacenar el contenido de un vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{class_vector_a93f0b87707399eaa672d93e54c033f7a}{}\label{class_vector_a93f0b87707399eaa672d93e54c033f7a} 
+\index{Vector@{Vector}!size@{size}}
+\index{size@{size}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Vector\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el tamaño de un vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size Tamaño del vector. 
+\end{DoxyReturn}
+\hypertarget{class_vector_a3279c16a264024cf6eb49e6d4cef5ad5}{}\label{class_vector_a3279c16a264024cf6eb49e6d4cef5ad5} 
+\index{Vector@{Vector}!zeros@{zeros}}
+\index{zeros@{zeros}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{zeros()}{zeros()}}
+{\footnotesize\ttfamily void Vector\+::zeros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Llena de ceros un vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/Vector.\+hpp\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/Vector.\+cpp\end{DoxyCompactItemize}

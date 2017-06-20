@@ -1,0 +1,159 @@
+\hypertarget{class_gauss_seidel}{}\section{Gauss\+Seidel Class Reference}
+\label{class_gauss_seidel}\index{Gauss\+Seidel@{Gauss\+Seidel}}
+
+
+Se implementa el método numerico Gauss-\/\+Seidel para la solución de sistemas de ecuaciones lineales. En este caso sirve para la matriz de tipo \hyperlink{class_c_s_r}{C\+SR}.  
+
+
+
+
+{\ttfamily \#include $<$Gauss\+Seidel.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_gauss_seidel_a5453a198069d92b78e0eda9c9e779508}{}\label{class_gauss_seidel_a5453a198069d92b78e0eda9c9e779508} 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries solve} (T \&A, \hyperlink{class_vector}{Vector} \&x, \hyperlink{class_vector}{Vector} \&b)
+\item 
+int \hyperlink{class_gauss_seidel_af6e2a4215cc0127b156269ee65e2d5a3}{its} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de iteraciones realizadas. \end{DoxyCompactList}\item 
+double \hyperlink{class_gauss_seidel_ae78a52240f0d1a67e08a0ac280f87d95}{error} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el error calculado de la matriz. \end{DoxyCompactList}\item 
+double \hyperlink{class_gauss_seidel_a78d7823a16dd20eb30452ef340320a72}{tim} ()
+\begin{DoxyCompactList}\small\item\em Tiempo utilizado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\item 
+void \hyperlink{class_gauss_seidel_aa52a83ac794ad85dcfbff4782a2a4f1d}{max\+Its} (int it)
+\begin{DoxyCompactList}\small\item\em Define un nuevo numero de iteraciones maximas permitidas. \end{DoxyCompactList}\item 
+void \hyperlink{class_gauss_seidel_a6df722abff1a051a0659a42224ff28c3}{tole} (double t)
+\begin{DoxyCompactList}\small\item\em Define una nueva tolerancia para el método de \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\item 
+void \hyperlink{class_gauss_seidel_acfa57a8a814d10c304f83144ed87b442}{report} ()
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla un reporte del algoritmo \hyperlink{class_jacobi}{Jacobi}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Se implementa el método numerico Gauss-\/\+Seidel para la solución de sistemas de ecuaciones lineales. En este caso sirve para la matriz de tipo \hyperlink{class_c_s_r}{C\+SR}. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+6/12/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Mario Arturo Nieto Butrón  S\+Y\+SG 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_gauss_seidel_ae78a52240f0d1a67e08a0ac280f87d95}{}\label{class_gauss_seidel_ae78a52240f0d1a67e08a0ac280f87d95} 
+\index{Gauss\+Seidel@{Gauss\+Seidel}!error@{error}}
+\index{error@{error}!Gauss\+Seidel@{Gauss\+Seidel}}
+\subsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily double Gauss\+Seidel\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el error calculado de la matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+errP Error alcanzado con el método \hyperlink{class_jacobi}{Jacobi}. 
+\end{DoxyReturn}
+\hypertarget{class_gauss_seidel_af6e2a4215cc0127b156269ee65e2d5a3}{}\label{class_gauss_seidel_af6e2a4215cc0127b156269ee65e2d5a3} 
+\index{Gauss\+Seidel@{Gauss\+Seidel}!its@{its}}
+\index{its@{its}!Gauss\+Seidel@{Gauss\+Seidel}}
+\subsubsection{\texorpdfstring{its()}{its()}}
+{\footnotesize\ttfamily int Gauss\+Seidel\+::its (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el numero de iteraciones realizadas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+iterP Numero de iteraciones utilizadas para la convergencia del metodo. 
+\end{DoxyReturn}
+\hypertarget{class_gauss_seidel_aa52a83ac794ad85dcfbff4782a2a4f1d}{}\label{class_gauss_seidel_aa52a83ac794ad85dcfbff4782a2a4f1d} 
+\index{Gauss\+Seidel@{Gauss\+Seidel}!max\+Its@{max\+Its}}
+\index{max\+Its@{max\+Its}!Gauss\+Seidel@{Gauss\+Seidel}}
+\subsubsection{\texorpdfstring{max\+Its()}{maxIts()}}
+{\footnotesize\ttfamily void Gauss\+Seidel\+::max\+Its (\begin{DoxyParamCaption}\item[{int}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define un nuevo numero de iteraciones maximas permitidas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Iteraciones nuevas permitidas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_gauss_seidel_acfa57a8a814d10c304f83144ed87b442}{}\label{class_gauss_seidel_acfa57a8a814d10c304f83144ed87b442} 
+\index{Gauss\+Seidel@{Gauss\+Seidel}!report@{report}}
+\index{report@{report}!Gauss\+Seidel@{Gauss\+Seidel}}
+\subsubsection{\texorpdfstring{report()}{report()}}
+{\footnotesize\ttfamily void Gauss\+Seidel\+::report (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra en pantalla un reporte del algoritmo \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{class_gauss_seidel_a78d7823a16dd20eb30452ef340320a72}{}\label{class_gauss_seidel_a78d7823a16dd20eb30452ef340320a72} 
+\index{Gauss\+Seidel@{Gauss\+Seidel}!tim@{tim}}
+\index{tim@{tim}!Gauss\+Seidel@{Gauss\+Seidel}}
+\subsubsection{\texorpdfstring{tim()}{tim()}}
+{\footnotesize\ttfamily double Gauss\+Seidel\+::tim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tiempo utilizado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ninguno.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+\_\+etimeP Tiempo usado por el algoritmo de \hyperlink{class_jacobi}{Jacobi}. 
+\end{DoxyReturn}
+\hypertarget{class_gauss_seidel_a6df722abff1a051a0659a42224ff28c3}{}\label{class_gauss_seidel_a6df722abff1a051a0659a42224ff28c3} 
+\index{Gauss\+Seidel@{Gauss\+Seidel}!tole@{tole}}
+\index{tole@{tole}!Gauss\+Seidel@{Gauss\+Seidel}}
+\subsubsection{\texorpdfstring{tole()}{tole()}}
+{\footnotesize\ttfamily void Gauss\+Seidel\+::tole (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define una nueva tolerancia para el método de \hyperlink{class_jacobi}{Jacobi}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Valor double con la nueva tolerancia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/m0n\+T3c\+R1s70/\+Dropbox/\+Tesis/\+Codigo/\+C++/\+Validate/Gauss\+Seidel.\+hpp\end{DoxyCompactItemize}

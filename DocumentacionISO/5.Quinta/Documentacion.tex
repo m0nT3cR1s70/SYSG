@@ -1,0 +1,595 @@
+%PREAMBULO
+%Tipo de reporte
+\documentclass[12pt]{report}
+%Diseño del documento
+%\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry}
+%Permite incluir simbolos de la AMS
+\usepackage{amsmath,amssymb,amsfonts}
+%Paquete para incluir acentos
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%Paquete para manejo de gráficos y Figuras
+\usepackage{graphicx}
+%Paquete para documentos en español
+\usepackage[spanish]{babel}
+%Paquete para las letras
+\usepackage{lettrine}
+%Paquete para enlazar
+\usepackage [hidelinks]{hyperref}
+%Paquete para la Cabecera y el pie de pagina
+\usepackage{fancyhdr}
+%Paquete para formatear codigo C
+\usepackage{listings}
+%Paquete para usar marcos en el codigo fuente
+\usepackage{fancybox, graphicx}
+%Paquete para manejar la posicion de las imagenes
+\usepackage{float}
+%Para numerar ejemplos y definiciones
+\newtheorem{ejemplo}{{\it Ejemplo}}[chapter]
+\newtheorem{defi}{{\it Definición}}[chapter]
+%Paquete para pseudocodigos
+%\usepackage{algorithm2e}
+%%Para hipervinculos
+\usepackage{hyperref}
+%% PONEMOS EN FORMA HORIZONTAL
+\usepackage{lscape}
+%% PARA LAS LIGAS DE INTERNET
+\usepackage[usenames]{color}
+%APENDICES
+\usepackage{appendix}
+%%% PARA AGREGAR PDF'S%%%%%
+%%%PAQUETE PARA TRATAR CON TABLAS GRANDES%%%
+\usepackage{longtable}
+\usepackage{multirow,array}
+
+
+%%%%NUMERAMOS LAS ECUACIONES 
+\numberwithin{equation}{section}
+%Cuerpo de documento
+\begin{document}
+% ESTILO DE CABECERAS
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername}\ \thechapter.\ #1}{}}
+%Grosor de la linea de cabeceras
+\renewcommand{\headrulewidth}{0.2pt} 
+\pagenumbering{Roman} 
+
+\newcommand{\plan}{Plan del Proyecto}
+\newcommand{\iso}{ISO/IEC 29110 Perfil B\'asico}
+\newcommand{\isoP}{ISO/IEC 29110 Perfil B\'asico }
+%\newcommand{\plan}{Plan del Proyecto}
+\newcommand{\planE}{Plan del Proyecto }
+\newcommand{\implementacion}{Implementaci\'on de Software}
+\newcommand{\reporte}{Reporte de seguimiento }
+
+
+
+\pagenumbering{arabic}
+\setcounter{page}{26}
+
+
+\newpage
+
+
+\centering\section{Plan del Proyecto 5 iteraci\'on}\label{Plan del Proyecto5}
+%\large{1.Introducci\'on}\\
+%\vspace{1em}
+%\small{\textit{[La introducci\'on ofrece un resumen del contenido del documento y del \'area de estudio del proyecto.}]}
+%\vspace{2em}
+%
+%
+%\large{2.Enunciado de Trabajo}\\
+%\vspace{1em}
+%
+%\large{2.1 Objetivos Generales}\\
+%\vspace{1em}
+%\small{\textit{[En esta sección se documenta el enunciado de trabajo del proyecto en cuestión,  se consideran las metas que se esperan alcanzar con los productos de software terminados.}]}
+%\vspace{2em}
+\begin{flushleft}
+\large{3.Objetivos y Tareas}\\
+\vspace{1em}
+
+
+\large{3.1 Objetivos}\\
+\vspace{1em}
+%\small{\textit{[Objetivos que se desean alcanzar al final del tiempo asignado al \plan, estos pueden abarcar desde  investigaci\'on hasta la construcci\'on de software o entrega del producto.}]}
+%\vspace{2em}
+
+\begin{longtable}[H]{|m{0.5cm}|m{7cm}|m{5.5cm}|}
+\hline
+\small{\textbf{ID}} & \small{\textbf{Objetivos}} & \small{\textbf{Estado del Objetivo}} \\
+\hline \hline
+\endfirsthead
+\hline
+\small{\textbf{ID}} & \small{\textbf{Objetivos}} & \small{\textbf{Estado del Objetivo}} \\
+\hline \hline
+\endhead
+\hline
+\endfoot
+
+\endlastfoot
+\textbf{1}  & \small{Construcci\'on de los esquemas de almacenamiento para marices dispersas noestructuradas} & \small{\textit{Iniciadas}}\\
+\hline 
+\textbf{2}  & \small{Construcci\'on de una clase que trate vectores del tipo flotante de doble presici\'on (double)} & \small{\textit{Iniciado}}\\
+\hline 
+\textbf{3}  & \small{Construcci\'on de los metodos numericos para la soluci\'on de sistemas de cuaciones lineales} & \small{\textit{Iniciado}}\\
+\hline
+\hline
+\caption{{\footnotesize Lista de objetivos a completar.}}
+\label{tabla: TABLA CE quinta plan}
+\end{longtable}
+
+
+\large{3.2.Tareas}\\
+%\vspace{1em}
+%\small{\textit{[Las tareas registradas pueden ayudar al cumplimiento de los objetivos.]}}
+%\vspace{2em}
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{0.5cm}|m{0.7cm}|m{2.5cm}|m{3cm}|m{2.5cm}|m{2.5cm}|}
+\hline
+\textbf{ID} & \multicolumn{2}{|l|}{\textbf{Funcionalidad o Actividad}} & \textbf{Responsable} & \textbf{Fecha de Entrega} & \textbf{Estado (Iniciado/ Terminado/ Pendiente)}\\
+\hline \hline
+1 & \multicolumn{5}{|l|}{\textit{Investigaci\'on}}\\
+\hline
+  & \textit{1.1} & \small{Investigaci\'on de los esquemas de almacenamiento} & \small{ET} & \small{\textit{15-08-2016}} &  \small{Iniciado}\\ 
+\hline
+  & \textit{1.2} &\small{Investigaci\'on de RMS} & \small{ET}& \small{\textit{15-08-2016}} &  \small{Iniciado}\\
+\hline
+  & \textit{1.3} &\small{Investigaci\'on de métodos n\'umericos} & \small{ET}& \small{\textit{15-08-2016}} &  \small{Iniciado}\\ 
+\hline
+2 & \multicolumn{5}{|l|}{\textit{Construcci\'on}}\\
+\hline
+  & \textit{2.1} & \small{Construcci\'on del esquema de almacenamiento eficiente para matrices dispersas} &\small{Desarrollador} & \small{\textit{22-08-2016}} &  \small{Pendiente} \\ 
+\hline
+  & \textit{2.2} & \small{Construcci\'on de RMS} &\small{Desarrollador} & \small{\textit{22-08-2016}} &  \small{Iniciado} \\ 
+\hline
+  & \textit{2.3} & \small{Construcci\'on de metodos n\'umericos para soluci\'on de sistemas de ECU. DIF.} &\small{Desarrollador} & \small{\textit{22-08-2016}} &  \small{Iniciado} \\ 
+\hline
+3 & \multicolumn{5}{|l|}{\textit{Pruebas}}\\
+\hline
+  & \textit{3.1} & \small{PRuebas de integraci\'on de los nuevos módulos con los ya desarrollados} & \small{ET} & \small{\textit{23-11-2016}} &  \small{Pendiente} \\ 
+\hline
+4 & \multicolumn{5}{|l|}{\textit{Documentaci\'on}}\\
+\hline
+  & \textit{4.1} & \small{Verificar que la documentaci\'on este completa y disponible} & \small{Desarrollador} & \small{\textit{20-11-2016}} &  \small{Pendiente} \\ 
+\hline
+
+\end{tabular}
+
+\end{table}
+
+
+
+
+\large{4.Riesgos}\\
+%\vspace{1em}
+%\small{\textit{[Listado de los riesgos identificados que podr\'ian afectar el desarrollo del proyecto en la iteraci\'on actual en caso de ocurrencia.]}}
+%\vspace{2em}
+
+
+\begin{table}[H]
+\begin{tabular}{|m{2cm}|m{4cm}|m{4.5cm}|m{1.5cm}|m{2cm}|}
+\hline 
+\textbf{Nombre } & \textbf{Descripci\'on} & \textbf{Plan de contingencia} & \textbf{Impacto} & \textbf{Estado del riesgo}  \\
+\hline
+\hline
+\small{Reuni\'on con el Administador} & \small{No ha habido reuniones con el administrador.}& \small{mantener el trabajo}  & \small{Alto} & \small{Controlado}\\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Tabla de riesgos nuevos y que se han manifestado.}}
+\label{tabla: TABLA CE de nuevos riesgos}
+\end{table}
+
+\end{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Nuevo doc%%%%%%%%%%%%%%%%%%%%%%%%%%%%555555
+\newpage
+
+\centering \section{Reporte de Seguimiento} 
+%\vspace{1em}
+
+
+\begin{tabular}{m{7cm} m{8cm}}
+\small{ \textbf{Proyecto:} \scriptsize{\textit{[Simulaci\'on de flujo de medios porosos usando CVFE]}}} & \small{\textbf{Periodo a Reportar:} \scriptsize{08-08-2016.] al [12-08-2016]}}
+\end{tabular}
+
+\begin{flushleft}
+
+\large{1.Reporte de Actividades }\\
+%\vspace{1em}
+%\small{\textit{[Listado de todas las actividades y objetivos realizados por el equipo durante el periodo de tiempo reportado.]}}
+%\vspace{2em}
+
+
+\begin{table}[H]
+\begin{tabular}{|m{2cm}|m{4.5cm}|m{1.5cm}|m{1.5cm}|m{4.5cm}|}
+\hline
+\small{\textbf{Integrante}} &\small{ \textbf{Actividad u Objetivo}} &\small{ \textbf{Tiempo Total}} & \small{\textbf{Estado} }& \small{\textbf{Observaciones}}\\
+\hline \hline
+ET & Construcci\'on de esquemas de almacenamiento eficientes para matrices dispersas  & 12 hr & Iniciado & \small{Se iniciar\'a la construcci\'on conforme a la investigaci\'on realizada.}\\
+\hline
+ET & Construcci\'on de la clase que trate vectores de doble precisi\'on  & 13 hr & Iniciado & \small{Su construcci\'on se esta realizando conforme la investigaci\'on realizada. }\\
+\hline
+ET & Construcci\'on de metodos de soluci\'on de  Sist. ECU. DIF.  & -- & Pendiente & \small{Aun no se inicia completamente la investigaci\'on necesaria y se visualiza que necesitar\'a m\'as tiempo.}\\
+\hline
+\multicolumn{2}{|c|}{Total de Horas trabajadas} & 25 hr  & & \\
+\hline 
+\end{tabular}
+%\caption{{\footnotesize  Tabla de los Objetivos y actividades a realizar.}}
+\label{tabla: TABLA CE Actividades}
+\end{table}
+
+
+
+\large{2.Tareas finalizadas }\\
+%\vspace{1em}
+%\small{\textit{[Registro de tareas que han finalizado en el momento de la realizaci\'on del reporte.]}}
+%\vspace{2em}
+
+\begin{longtable}[H]{|m{5cm}|m{3cm}|m{3cm}|m{3cm}|} 
+\hline
+\small{\textbf{Actividad y/o tarea }} &\small{ \textbf{Integrante}} & \small{\textbf{Fecha de entrega}} & \small{\textbf{Fecha real}}\\
+\hline \hline
+\endfirsthead
+
+\hline
+\small{\textbf{Actividad y/o tarea }} &\small{ \textbf{Integrante}} & \small{\textbf{Fecha de entrega}} & \small{\textbf{Fecha real}}\\
+\hline \hline
+\endhead
+\hline
+\endfoot
+
+\endlastfoot
+\hline
+\hline
+\small{Investigaci\'on para la construcci\'on de esquemas de almacenamiento de matrices dispersas no estructuradas} & \small{ET} &\small{ \textit{[15-08-2016]}} & \small{\textit{[12-08-2016]}}\\
+\hline
+\small{ET} &\small{Investigaci\'on para la construcci\'on de vectores del tipo flotante} &\small{ \textit{[15-08-2016]}} & \small{\textit{[12-08-2016]}}\\
+\hline
+\hline
+%\caption{Roles}
+%\label{tabla:TAreasProy}
+\end{longtable}
+
+\newpage
+
+\large{3.Productos }
+%\vspace{1em}
+%\small{\textit{[Listado de todos los productos de software  realizados por el equipo y su estado actual.]}}
+%\vspace{2em}
+\begin{table}[H]
+\begin{tabular}{|m{0.5cm}|m{7.5cm}|m{6cm}|}
+\hline 
+\textbf{ID } & \textbf{Producto} & \textbf{Estado} \\
+\hline
+\hline
+ 1 & \small{Clase malla} & \small{Finalizado}\\
+\hline
+ 2 & \small{CVFEM} & \small{En Proceso}\\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Tabla de Productos.}}
+\label{tabla: TABLA CE Productos}
+\end{table}
+
+
+
+\large{4.Cambios}\\
+%\vspace{1em}
+%\small{\textit{[Registro de los cambios necesarios tanto en documentaci\'on como en los productos de software generados.]}}
+%\vspace{2em}
+
+\begin{table}[H]
+\begin{tabular}{|m{0.5cm}|m{2cm}|m{4.5cm}|m{3.5cm}|m{3.5cm}|}
+\hline 
+\textbf{ID} & \textbf{Producto} & \textbf{Descripci\'on} & \textbf{Solicitante} & \textbf{Estado}  \\
+\hline
+\hline
+1 & \small{--}  & \small{--} &\small{--} & \small{--}\\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Tabla que lleva el registro de cambios a realizar.}}
+\label{tabla: TABLA CE Cambios Seg}
+\end{table}
+
+
+
+\large{5.Riesgos}\\
+%\vspace{1em}
+%\small{\textit{[Listado de los riesgos identificados que podr\'ian afectar el desarrollo del proyecto en la iteraci\'on actual en caso de ocurrencia.]}}
+%\vspace{2em}
+
+
+\begin{table}[H]
+\begin{tabular}{|m{2cm}|m{4cm}|m{4cm}|m{2cm}|m{2cm}|}
+\hline 
+\textbf{Nombre } & \textbf{Descripci\'on} & \textbf{Plan de contingencia} & \textbf{Impacto} & \textbf{Estado del riesgo}  \\
+\hline
+\hline
+\small{Métodos numéricos} &\small{Se visualiza que esta parte de la investigaci\'on es extensa y se necesita m\'as tiempo de investigaci\'on para su entendimiento. } & \small{Dedicar el tiempo necesario para la investigaci\'on y trabajar mas horas en esta parte del proyecto} & Alto   &Identificado \\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Tabla de riesgos nuevos y que se han manifestado.}}
+\label{tabla: TABLA CE de nuevos riesgos Seg}
+\end{table}
+
+\large{6.Resumen}\\
+%\vspace{1em}
+%\small{\textit{[Es conveniente resumir las mediciones tomadas en el periodo de tiempo que abarca el seguimiento, para ello se proponen tablas que incluyan la informaci\'on m\'as relevante de una manera breve y clara.]}}
+%\vspace{2em}
+
+\begin{table}[H]
+\begin{tabular}{|m{5cm}|m{5cm}|m{5cm}|}
+\hline
+\textbf{Tareas} & \textbf{Cambios} & \textbf{Riesgos}\\
+\hline \hline 
+A tiempo: 0 & Solicitados: 0 & Encontrados 1 \\
+\hline
+Retrasadas: 1 & Rechazados: 0 & Resueltos 0 \\
+\hline
+Adelantadas:2  & Realizados: 0  & Postergados 0 \\
+\hline
+Postergadas: 1 & Postergados:  0 & \\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Resumen de actividades.}}
+\label{tabla: TABLA CE Resumen}
+\end{table}
+
+\end{flushleft}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%nuevo documento%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\centering \section{Reporte de Seguimiento} 
+%\vspace{1em}
+
+\begin{flushleft}
+
+\begin{tabular}{m{7cm} m{8cm}}
+\small{ \textbf{Proyecto:}} \scriptsize{\textit{[Simulaci\'on de flujo de medios porosos usando CVFE]}} & \small{\textbf{Periodo a Reportar:}} \scriptsize{12-08-2016.] al [22-08-2016]}
+\end{tabular}
+
+
+
+\large{1.Reporte de Actividades }\\
+%\vspace{1em}
+%\small{\textit{[Listado de todas las actividades y objetivos realizados por el equipo durante el periodo de tiempo reportado.]}}
+%\vspace{2em}
+
+
+\begin{table}[H]
+\begin{tabular}{|m{2cm}|m{4.5cm}|m{1.5cm}|m{1.5cm}|m{4.5cm}|}
+\hline
+\small{\textbf{Integrante}} &\small{ \textbf{Actividad u Objetivo}} &\small{ \textbf{Tiempo Total}} & \small{\textbf{Estado} }& \small{\textbf{Observaciones}}\\
+\hline \hline
+ET &Investigaci\'on de metodos num\'ericos para la soluci\'on de Sist. ECU. DIF.  & -- & Pendiente & \small{Se iniciar\'a la investigaci\'on necesaria cuando se concluya la construcci\'on de los elementos actuales.}\\
+\hline
+ET & Construcci\'on de esquemas de almacenamiento eficientes para matrices dispersas  & 48 hr & Proceso & \small{Se estan iniciando la parte de pruebas.}\\
+\hline
+ET & Construcci\'on de la clase que trate vectores de doble precisi\'on  & 20 hr & Proceso & \small{Se estan realizando pruebas.}\\
+\hline
+ET & Construcci\'on de metodos de soluci\'on de  Sist. ECU. DIF.  & -- & Pendiente & \small{La construcci\'on se realizar\'a cuando se tenga el conocimiento necesario.}\\
+\hline
+\multicolumn{2}{|c|}{Total de Horas trabajadas} & 68 hr  & & \\
+\hline 
+\end{tabular}
+%\caption{{\footnotesize  Tabla de los Objetivos y actividades a realizar.}}
+\label{tabla: TABLA CE Actividades}
+\end{table}
+
+
+\large{2.Tareas finalizadas }\\
+%\vspace{1em}
+%\small{\textit{[Registro de tareas que han finalizado en el momento de la realizaci\'on del reporte.]}}
+%\vspace{2em}
+
+\begin{longtable}[H]{|m{5cm}|m{3cm}|m{3cm}|m{3cm}|} 
+\hline
+\small{\textbf{Actividad y/o tarea }} &\small{ \textbf{Integrante}} & \small{\textbf{Fecha de entrega}} & \small{\textbf{Fecha real}}\\
+\hline \hline
+\endfirsthead
+
+\hline
+\small{\textbf{Actividad y/o tarea }} &\small{ \textbf{Integrante}} & \small{\textbf{Fecha de entrega}} & \small{\textbf{Fecha real}}\\
+\hline \hline
+\endhead
+\hline
+\endfoot
+
+\endlastfoot
+\hline
+\hline
+\small{--} & \small{--} &\small{ \textit{[--]}} & \small{\textit{[--]}}\\
+\hline
+\hline
+%\caption{Roles}
+%\label{tabla:TAreasProy}
+\end{longtable}
+
+\large{3.Productos }
+%\vspace{1em}
+%\small{\textit{[Listado de todos los productos de software  realizados por el equipo y su estado actual.]}}
+%\vspace{2em}
+\begin{table}[H]
+\begin{tabular}{|m{0.5cm}|m{7.5cm}|m{6cm}|}
+\hline 
+\textbf{ID } & \textbf{Producto} & \textbf{Estado} \\
+\hline
+\hline
+ 1 & \small{Clase malla} & \small{Finalizado}\\
+\hline
+ 2 & \small{CVFEM} & \small{En Proceso}\\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Tabla de Productos.}}
+\label{tabla: TABLA CE Productos}
+\end{table}
+\newpage
+\large{4.Cambios}\\
+%\vspace{1em}
+%\small{\textit{[Registro de los cambios necesarios tanto en documentaci\'on como en los productos de software generados.]}}
+%\vspace{2em}
+
+\begin{table}[H]
+\begin{tabular}{|m{0.5cm}|m{2cm}|m{4.5cm}|m{3.5cm}|m{3.5cm}|}
+\hline 
+\textbf{ID} & \textbf{Producto} & \textbf{Descripci\'on} & \textbf{Solicitante} & \textbf{Estado}  \\
+\hline
+\hline
+1 & \small{--}  & \small{--} &\small{--} & \small{--}\\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Tabla que lleva el registro de cambios a realizar.}}
+\label{tabla: TABLA CE Cambios Seg}
+\end{table}
+
+\large{5.Riesgos}\\
+%\vspace{1em}
+%\small{\textit{[Listado de los riesgos identificados que podr\'ian afectar el desarrollo del proyecto en la iteraci\'on actual en caso de ocurrencia.]}}
+%\vspace{2em}
+
+
+\begin{table}[H]
+\begin{tabular}{|m{2cm}|m{4cm}|m{4cm}|m{2cm}|m{2cm}|}
+\hline 
+\textbf{Nombre } & \textbf{Descripci\'on} & \textbf{Plan de contingencia} & \textbf{Impacto} & \textbf{Estado del riesgo}  \\
+\hline
+\hline
+\small{--} &\small{--} & \small{--} & --   & -- \\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Tabla de riesgos nuevos y que se han manifestado.}}
+\label{tabla: TABLA CE de nuevos riesgos Seg}
+\end{table}
+
+\large{6.Resumen}\\
+%\vspace{1em}
+%\small{\textit{[Es conveniente resumir las mediciones tomadas en el periodo de tiempo que abarca el seguimiento, para ello se proponen tablas que incluyan la informaci\'on m\'as relevante de una manera breve y clara.]}}
+%\vspace{2em}
+
+\begin{table}[H]
+\begin{tabular}{|m{5cm}|m{5cm}|m{5cm}|}
+\hline
+\textbf{Tareas} & \textbf{Cambios} & \textbf{Riesgos}\\
+\hline \hline 
+A tiempo: 0 & Solicitados: 0 & Encontrados 0 \\
+\hline
+Retrasadas: 2 & Rechazados: 0 & Resueltos 0 \\
+\hline
+Adelantadas:0  & Realizados: 0  & Postergados 0 \\
+\hline
+Postergadas: 1 & Postergados:  0 & \\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Resumen de actividades.}}
+\label{tabla: TABLA CE Resumen}
+\end{table}
+
+\end{flushleft}
+
+\newpage
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%nuevo doc%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering \section{Cierre del Plan}\label{CE Cierre}
+%\vspace{1em}
+
+\begin{flushleft}
+
+\textbf{1.Resumen}\\
+%\vspace{1em}
+%\scriptsize{\textit{[Es conveniente resumir las mediciones registradas durante la ejecuci\'on del \plan, para ello se proponen tablas que incluyan la informaci\'on m\'as relevante de una manera breve y clara. Los objetivos se registran para tener una perspectiva del avance del proyecto, con el objetivo de tomar decisiones para concluir el proyecto.]}}
+%\vspace{2em}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{5cm}|m{5cm}|}
+\hline
+\textbf{Productos} & \textbf{Cambios}\\
+\hline \hline
+\small{A tiempo: 2 }&\small{ Solicitados: 0}\\
+\hline
+\small{Retrasados: 1}& \small{Rechazados:0}\\
+\hline
+\small{Adelantados: 0}& \small{Realizados:0}\\
+\hline
+\small{Postergados: 1}& \small{Postergados:0}\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{5cm}|m{5cm}|}
+\hline
+\textbf{Riesgos} & \textbf{Actividades u Objetivos}\\
+\hline \hline
+\small{Encontrados: 1}& \small{Postergados: 1}\\
+\hline
+\small{Resueltos: 1} & \small{Alcanzados: 2}\\
+\hline
+%Postergados: & \\
+%\hline
+\end{tabular}
+%\caption{{\footnotesize  Resumen de actividades Cierre.}}
+\label{tabla: TABLA CE ResumenCierre}
+\end{table}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+\textbf{2.Reporte de productos.}\\
+%\vspace{1em}
+%\scriptsize{\textit{[Se realiza un recuento de los productos, defectos y su estado al final de la ejecuci\'on del \plan.]}}
+%\vspace{2em}
+
+\begin{table}[H]
+\begin{tabular}{|m{4cm}|m{3cm}|m{3cm}|m{5cm}|}
+\hline
+\textbf{Nombre del producto} & \multicolumn{2}{c|}{\textbf{Cambios}}  
+ & \textbf{Estado del producto}\\
+ \hline
+ & \textbf{Encontrados} &\textbf{Corregidos} & \\
+\hline
+\small{Almacenamiento del vector} & 0 & 0 &\scriptsize{\textit{postergado}} \\
+\hline 
+\small{Esquemas de matrices dispersas}& 0 & 0 & \scriptsize{\textit{{postergado}}} \\
+\hline
+\small{CVFEM}  & 0 & 0 &\scriptsize{\textit{Postergado}} \\
+\hline
+\small{Malla} & 0 & 0 &\scriptsize{\textit{Finalizado}} \\
+\hline
+\end{tabular}
+%\caption{{\footnotesize  Tabla de los Objetivos y actividades a realizar.}}
+\label{tabla: TABLA Actividades CE }
+\end{table}
+
+
+\textbf{3.Retroalimentaci\'on.}\\
+%\vspace{1em}
+%\scriptsize{\textit{[Listar mejoras y sugerencias del proceso seguido, listar las tareas que se pretenden realizar en la siguiente iteraci\'on anexando las tareas del \plan anterior que aun est\'an en proceso y los acuerdos que el equipo ha decidido realizar para el mejoramiento del trabajo.]}}
+%\vspace{2em}
+
+\small{Los productos en esta iteeraci\'on realizados se encuentran terminados, aun faltan realizar pruebas de integraci\'on es por este motivo que hemos puesto estos productos con el estado en Proceso, se requiere mas contacto con el Administrador.}
+
+\small{\textbf{Tareas por terminar}.  \begin{itemize}
+\item Pruebas de los módulos construidos con el modulo de CVFEM.
+\item Investigaci\'on de los métodos numéricos para resolver sistemas de ecuaciones lineales.
+\item PRogramaci\'on de los m\'etodos num\'ericos para resolver sistemas de ecuaciones lineales.
+\end{itemize}}
+
+
+%\textbf{4.Comentarios}\\
+
+%\small{} 
+\end{flushleft}
+
+\end{document}

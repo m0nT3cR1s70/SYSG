@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['savedata',['saveData',['../class_vector.html#a5800036c27dc546cd7db4365d8ce206a',1,'Vector']]],
+  ['scompre',['sCompre',['../class_c_v_f_e_m.html#ac60363ea7805dbb4a8c3d42b5d849bba',1,'CVFEM']]],
+  ['sdensidad',['sDensidad',['../class_c_v_f_e_m.html#ae28f0a371ddc5ae1728bf26c31762364',1,'CVFEM']]],
+  ['search',['search',['../class_c_s_r.html#afd302aaea45e8bb0acbd4fea15aa39be',1,'CSR']]],
+  ['sfuente',['sFuente',['../class_c_v_f_e_m.html#a2c3c174843a173f1419c41963e1d8f1f',1,'CVFEM']]],
+  ['sgravedad',['sGravedad',['../class_c_v_f_e_m.html#aa8c7083144c757b4cc59bdaab84c6c0b',1,'CVFEM']]],
+  ['showarea',['showArea',['../class_mesh.html#a759b0e82f01de4d168b2a30e5280df3c',1,'Mesh']]],
+  ['showboundarycondition',['showBoundaryCondition',['../class_mesh.html#a45a42ffc6565851e50e47b6b618c22f5',1,'Mesh']]],
+  ['showelement',['showElement',['../class_mesh.html#a0d528aac55b1e4c2a6f5049f9d2cf90d',1,'Mesh']]],
+  ['showelementsupportnode',['showElementSupportNode',['../class_mesh.html#a895299dd6c9c2e2ffb5ef59becc81fd3',1,'Mesh']]],
+  ['showgmsh',['showGmsh',['../class_mesh.html#ab390b1e1292e0236b1a3d35c6b738228',1,'Mesh']]],
+  ['showneighborh',['showNeighborh',['../class_mesh.html#aeca4f92ea58c7c4f87e33df91ac33574',1,'Mesh']]],
+  ['shownode',['showNode',['../class_mesh.html#ac5eb1247da3ed432323f1dd8aebbf554',1,'Mesh']]],
+  ['shownodedirichlet',['shownodeDirichlet',['../class_mesh.html#a01bf98587a47624696aa808efac92ad8',1,'Mesh']]],
+  ['shownodeelement',['showNodeElement',['../class_mesh.html#ac8d60f17c950dca8ef1a6288860bd3cb',1,'Mesh']]],
+  ['shownodeif',['showNodeIF',['../class_mesh.html#a4de5c225341eb4fc73810d1415eb57da',1,'Mesh']]],
+  ['shownodeneumman',['shownodeNeumman',['../class_mesh.html#a0a4f5148e80cc4a1df6db20e149515a2',1,'Mesh']]],
+  ['showrelation',['showRelation',['../class_mesh.html#a90fd6f1f7a64ff29d1eeee72c22142d2',1,'Mesh']]],
+  ['showtotal',['showTotal',['../class_mesh.html#a941977c20a68f58aa11d264fb30f3032',1,'Mesh']]],
+  ['size',['size',['../class_vector.html#a93f0b87707399eaa672d93e54c033f7a',1,'Vector']]],
+  ['solution',['solution',['../class_solve.html#a886704acb9e9ec5bd99741b3923fe469',1,'Solve']]],
+  ['solve',['solve',['../class_jacobi.html#aa8dec14e59b82b038b8567b333c04b3c',1,'Jacobi::solve()'],['../class_solve.html#ac437f1307c9d4669205ac7d370a55ffc',1,'Solve::Solve()']]],
+  ['sperme',['sPerme',['../class_c_v_f_e_m.html#a716e517bc0c71ae9fbb76537e5b12138',1,'CVFEM']]]
+];
